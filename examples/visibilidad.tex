@@ -1,26 +1,90 @@
 \documentclass[12pt,a4paper]{report}
 \usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel} % espanol
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{array}
 \usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \author{Julian David Mora Ramos}
 \title{Informe de visibilidad}
 \begin{document}
-	\part{Informe de visibilidad}
+	\title{%
+		Visibilidad \\
+		\large Visualización web y gestión de eventos de los Semilleros de Investigación de la Universidad de la Amazonia \\
+		Proyecto ligado al sistema SIGEPI}
+	\author{
+		Julian David$^{1}$, Valentina Rios$^{2}$, \\ 
+		Manuel Hernandez$^{3}$, Mitch Aguilar$^{4}$ \\ 
+		W. Emiro Castrillón $^{5}$ \\ 
+		\\
+		\small{$^{1-5}$Universidad de la Amazonia, $^{1-5}$Florencia,Caquetá}\\
+	}	
+	\maketitle
 	
-	\begin{tabular}{llrc}		
-		\hline
-		\textbf{Controladores} & \textbf{Descripción} & \textbf{Estado actual} & \\
-		\hline
-		42 controladores & 140 vistas aproximadamente & 90\% del software total
-	\end{tabular}
+	\tableofcontents
+	
+	\begin{center}
+		\chapter*{Visibilidad}
+	\end{center}
 
-	\begin{tabular}{llrc}		
-		\hline
-		\textbf{Controladores} & \textbf{Descripción} & \textbf{Estado actual} & \\
-		\hline
-		42 controladores & 140 vistas aproximadamente & 90\% del software total
-	\end{tabular}
+	\section{Frameworks y sistemas usados}
+	
+	\begin{itemize}
+		\item MVC 5 .NET. Solo Razor
+		\item VueJS. Framework de Javascript. Usado para desarrollo de interfaces dinámicas.
+		\item Oracle. Gestor de bases de datos.
+	\end{itemize}
+	
+	\section{Resumen}
+	
+	\begin{center}
+		\begin{tabular}{|l|p{3cm}|p{3.5cm}|rc|}
+			\hline
+			\textbf{Controladores} & \textbf{Vistas} & \textbf{Procedimientos} & \textbf{Estado actual} & \\
+			\hline
+			42 controladores & 140 vistas aproximadamente & 212 procedimientos almacenados & 90\% del software total & \\
+			\hline
+		\end{tabular}		
+	\end{center}
+	
+	Por cada procedimiento almacenado existente, hay una función en el controlador.
+	En total, hay 212 procedimientos almacenados hasta ahora \textit{(\today)}.
+	
+	\begin{center}
+		\begin{tabular}{|l|l|l|c|}
+					\hline 
+					\textbf{Asistente de desarrollo} & \textbf{Lineas reportadas} & \textbf{Tareas realizadas} & \textbf{Tiempo} \\ 
+					\hline 
+					Valentina Rios & 12.061 lineas de código & 
+						\begin{tabular}{c|p{4cm}}
+							&\\						
+							1 & Validación de procedimientos almacenados para actualizar, crear, eliminar y ver en detalle. Esto mismo aplicado a los 212 procedimientos almacenados existentes. \\ 
+							\hline 
+							2 & Creación y arreglo de algunos procedimientos almacenados, tablas, secuencias y disparadores \\ 
+							\hline 
+							3 & Comprobación y arreglo de vistas Razor. \\
+							\hline 
+							4 & Corrección de algunos métodos en los controladores. \\
+						\end{tabular} 
+					& Febrero-Marzo \\ 
+					\hline
+					Mitch Aguilar & 4.166 lineas de código & 
+						\begin{tabular}{c|p{4cm}}
+							&\\						
+							1 & Creación y mejoramiento de vistas publicas: 'Acerca de', la pagina principal de Visibilidad. \\ 
+							\hline 
+							2 & Adaptación de algunos formularios al estilo material de Google, \textit{Boostrap material design}. \\ 
+							\hline 
+							3 & Diseño de algunas otras interfaces gráficas \\
+						\end{tabular} 
+					& Febrero-Marzo \\ 
+					\hline 
+					&  &  & \\ 
+					\hline 
+					&  &  & \\ 
+					\hline 
+				\end{tabular} 
+	\end{center}	
 \end{document}
