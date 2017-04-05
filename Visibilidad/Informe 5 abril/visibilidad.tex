@@ -37,7 +37,7 @@
 		\item Oracle. Gestor de bases de datos.
 	\end{itemize}
 	
-	\section{Resumen}
+	\section{Resumen general}
 	
 	\begin{center}
 		\begin{tabular}{|l|p{3cm}|p{3.5cm}|rc|}
@@ -50,14 +50,17 @@
 	\end{center}
 	
 	Por cada procedimiento almacenado existente, hay una función en el controlador.
-	En total, hay 212 procedimientos almacenados hasta ahora \textit{(\today)}.
+	En total, hay 212 procedimientos almacenados hasta ahora \textit{(\today)}. Cada procedimiento está referenciado en una función de los controladores C\#, por lo tanto hay más de 212 funciones, esto incluye funciones tipo API (aprox. cuatro controladores) y cerca del 90\% son funciones de renderización de vistas (Razor).
+	
+	\section{Resumen de actividades}
 	
 	\begin{center}
-		\begin{tabular}{|l|l|l|c|}
+		\begin{tabular}{|l|p{3cm}|l|c|}
 					\hline 
-					\textbf{Asistente de desarrollo} & \textbf{Lineas reportadas} & \textbf{Tareas realizadas} & \textbf{Tiempo} \\ 
+					\textbf{Asistente de desarrollo} & \textbf{Aporte en \# lineas (Código)} & \textbf{Tareas realizadas} & \textbf{Tiempo} \\					
 					\hline 
-					Valentina Rios & 12.061 lineas de código & 
+					
+					Valentina Ríos & 12.061 lineas & 
 						\begin{tabular}{c|p{4cm}}
 							&\\						
 							1 & Validación de procedimientos almacenados para actualizar, crear, eliminar y ver en detalle. Esto mismo aplicado a los 212 procedimientos almacenados existentes. \\ 
@@ -70,7 +73,8 @@
 						\end{tabular} 
 					& Febrero-Marzo \\ 
 					\hline
-					Mitch Aguilar & 4.166 lineas de código & 
+					
+					Mitch Aguilar & 4.166 lineas & 
 						\begin{tabular}{c|p{4cm}}
 							&\\						
 							1 & Creación y mejoramiento de vistas publicas: 'Acerca de', la pagina principal de Visibilidad. \\ 
@@ -80,11 +84,34 @@
 							3 & Diseño de algunas otras interfaces gráficas \\
 						\end{tabular} 
 					& Febrero-Marzo \\ 
+					\hline
+				
+					Manuel Hernandez & 3.018 lineas & 
+					\begin{tabular}{c|p{4cm}}
+						&\\						
+						1 & Comprobación y mejoramiento de vistas. \\ 
+						\hline 
+						2 & Creación de procedimientos almacenados para eliminación de datos \\
+						\hline 
+						3 & Comprobación del funcionamiento de algunos procedimientos \\
+					\end{tabular}
+					& Febrero-Marzo \\ 					
 					\hline 
-					&  &  & \\ 
-					\hline 
-					&  &  & \\ 
-					\hline 
+					
+					Wilmer Emiro Castrillon & 1.597 lineas & 
+					\begin{tabular}{c|p{4cm}}					
+						1 & Adaptación de la vista principal (Index) con Google maps. \\ 
+						\hline
+						2 & Inserción de datos de prueba en tablas de la base de datos \\
+					\end{tabular}
+					& Febrero-Marzo \\
+					\hline 					
 				\end{tabular} 
-	\end{center}	
+	\end{center}
+
+	\begin{figure}
+		La gráfica muestra el intervalo de aportes medido por cantidad de lineas de código enviadas. Como se puede notar a continuación, se puede ver que cada asistente ha realizado una cantidad determinada de aportes, pero también se observa el numero de lineas eliminadas {\small (Números en color rojo)}. La altura cada cresta en las gráfica es proporcional a la cantidad de aportes realizados en un determinado intervalo de tiempo \textit{(meses)}. \\ \\
+		\includegraphics[width=\textwidth]{resources/resumen_github_commits.png}
+		\caption{Gráfica de contribución}
+	\end{figure}
 \end{document}
