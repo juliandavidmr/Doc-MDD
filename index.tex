@@ -1,9 +1,42 @@
-\tableofcontents % indice de contenidos
+\documentclass[12pt,a4paper]{book}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel} % espanol
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
+\author{Julian David Mora Ramos}
+\title{Proyecto, implementación de SIGEPI}
+\usepackage[pdftex,
+	pdfauthor={JULIAN DAVID MR},
+	pdftitle={IMPLEMENTACIÓN DEL SISTEMA SIGEPI},
+	pdfsubject={DESARROLLO DE SOFTWARE},
+	pdfkeywords={SOFTWARE, MDD, MDE},
+	pdfproducer={Universidad de la Amazonia},
+	pdfcreator={@anlijudavid}]{hyperref}
 
-\cleardoublepage
-\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
-\listoffigures % indice de figuras
-
-\cleardoublepage
-\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
-\listoftables % indice de tablas
+\begin{document}
+	\markboth{''SIGEPI''}{''Universidad de la Amazonia''}
+	\include{portada}
+	\include{portada2}
+	\include{dedicacion}
+	\include{agradecimientos}
+	\include{aceptacion}
+	\include{declaracion}
+	\include{tabla_contenido}
+	\include{tabla_figuras}
+	\include{indice_tablas}
+	
+	%---------------------------------------
+	%   TESIS
+	%---------------------------------------
+	\mainmatter %empieza la numeración de las páginas
+	\pagestyle{headings}
+	
+	\include{introduccion}
+	\include{marco_referencial}
+	\include{conclusiones}
+	\include{bibliografia}
+\end{document}
