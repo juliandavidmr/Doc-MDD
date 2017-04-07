@@ -3,6 +3,8 @@
 \usepackage[spanish]{babel} % espanol
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{array}
@@ -19,15 +21,15 @@
 
 \begin{document}
 	\markboth{''SIGEPI''}{''Universidad de la Amazonia''}
-	\include{portada}
-	\include{portada2}
-	\include{dedicacion}
-	\include{agradecimientos}
-	\include{aceptacion}
-	\include{declaracion}
-	\include{tabla_contenido}
-	\include{tabla_figuras}
-	\include{indice_tablas}
+	\include{capitulos/portada}
+	\include{capitulos/portada2}
+	\include{capitulos/dedicacion}
+	\include{capitulos/agradecimientos}
+	\include{capitulos/aceptacion}
+	\include{capitulos/declaracion}
+	\include{capitulos/tabla_contenido}
+	\include{capitulos/tabla_figuras}
+	\include{capitulos/indice_tablas}
 	
 	%---------------------------------------
 	%   TESIS
@@ -35,8 +37,8 @@
 	\mainmatter %empieza la numeración de las páginas
 	\pagestyle{headings}
 	
-	\include{introduccion}
-	\include{marco_referencial}
-	\include{conclusiones}
-	\include{bibliografia}
+	\include{capitulos/introduccion}
+	\include{capitulos/marco_referencial}
+	\include{capitulos/conclusiones}
+	\include{capitulos/bibliografia}
 \end{document}
