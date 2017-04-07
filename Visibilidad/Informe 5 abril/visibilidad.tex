@@ -6,6 +6,8 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{array}
+\usepackage{wasysym}
+\usepackage{hyperref}
 \usepackage[left=2.00cm, right=2.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \author{Julian David Mora Ramos}
 \title{Informe de visibilidad}
@@ -44,7 +46,7 @@
 			\hline
 			\textbf{Controladores} & \textbf{Vistas} & \textbf{Procedimientos} & \textbf{Estado actual} & \\
 			\hline
-			42 controladores & 140 vistas aproximadamente & 212 procedimientos almacenados & 90\% del software total & \\
+			42 controladores & 140 vistas aproximadamente & 212 procedimientos almacenados & 80\% del software total & \\
 			\hline
 		\end{tabular}		
 	\end{center}
@@ -114,36 +116,282 @@
 		\includegraphics[width=\textwidth]{resources/resumen_github_commits.png}
 		\caption{Gráfica de contribución}
 	\end{figure}
-
+	
+	
+	
+	\include{checklist}
+	
+	
 	
 	\section{Estado actual}
-	\begin{tabular}{|p{3cm}|p{6cm}|c|}
-		\hline
-		\textbf{Característica} & \textbf{Descripción} & \textbf{Funciones disponibles} \\ 
-		\hline
+	
+	\subsection[Inicio de sesión con chaira]{Chaira}
+	\begin{checklist}
+		\checkeditem Registro automatizado \textit{(No es necesario registrarse)}. Se requiere una cuenta de Chairá. 
+		\checkeditem Inicio de sesión usando las credenciales de chairá
+		\checkeditem Acceso rápido mediante API
+		\checkeditem Obtener información personal del usuario de chairá
+	\end{checklist}
+
+	\subsection[Estado de menú]{Menú dinámico}	
+	\begin{checklist}
+		\checkeditem Menú dinámico
+		\checkeditem Actualizar menú
+		\checkeditem Ver listado de permisos asignados a los menús
+		\checkeditem Desactivar un permiso
+	\end{checklist}
+
+	\subsection[Estado de actividad]{Actividad}	
+	\begin{checklist}
+		\checkeditem Registro de actividades
+		\checkeditem Actualizar actividad
+		\checkeditem Eliminar actividad
+		\checkeditem Ver listado de actividades
+	\end{checklist}
+
+	\subsection[Estado de noticia]{Noticia}	
+	\begin{checklist}
+		\checkeditem Publicar noticias
+		\checkeditem Ver listado de noticias
+		\checkeditem Visualización de noticias en la pagina principal
+		\checkeditem Visualización de noticias en una vista única
+	\end{checklist}
+
+	\subsection[Estado de adjuntar tareas]{Adjuntar tarea}	
+	\begin{checklist}
+		\checkeditem Creación del adjunto de una tarea
+		\checkeditem Ver listado de tareas adjuntas
+		\item Actualizar tarea adjuntada
+		\item Eliminar
+	\end{checklist}
+
+	\subsection[Estado de asignar tarea]{Asignar tarea}	
+	\begin{checklist}
+		\checkeditem Crear una asignación de tarea
+		\item Actualizar una asignación de tarea
+		\checkeditem Eliminar una tarea
+	\end{checklist}
 		
-		Chairá & Inicio de sesión usando las credenciales de chairá & 
-		\begin{tabular}{cp{4cm}}	
-			1 & Registro automatizado \textit{(No es necesario registrarse)}. Se requiere una cuenta de Chaira. \\ 
-			\hline 
-			2 & Acceso rápido mediante API \\ 
-		\end{tabular} \\ 
-		\hline
+	\subsection[Estado de asignar actividad]{Asignar actividad}	
+	\begin{checklist}
+		\checkeditem Crear una asignación de actividad
+		\item Actualizar una asignación de actividad
+		\checkeditem Eliminar una asignación
+	\end{checklist}
+	
+	\subsection[Estado de competencia]{Competencia}	
+	\begin{checklist}
+		\checkeditem Crear competencias
+		\item Actualizar competencias
+		\checkeditem Eliminar competencias
+	\end{checklist}
+	
+	\subsection[Estado de curso]{Cursos}	
+	\begin{checklist}
+		\checkeditem Crear cursos
+		\item Actualizar curso
+		\checkeditem Ver listado de cursos
+		\item Eliminar un curso
+	\end{checklist}
+
+	\subsection[Estado de documento]{Documento}	
+	\begin{checklist}
+		\checkeditem Crear documento
+		\item Actualizar un documento
+		\checkeditem Ver listado de documentos
+		\item Eliminar un documento
+	\end{checklist}
+
+	\subsection[Estado de entregas]{Entrega}	
+	\begin{checklist}
+		\checkeditem Crear un documento de entrega
+		\item Actualizar una entrega
+		\checkeditem Ver listado de entregas
+		\item Eliminar una entrega
+	\end{checklist}
+
+	\subsection[Estado de estudiantes de cursos]{Estudiantes de cursos}	
+	\begin{checklist}
+		\checkeditem Añadir estudiantes a un curso
+		\item Actualizar
+		\checkeditem Ver listado
+		\item Eliminar
+	\end{checklist}
+
+	\subsection[Estado de evento]{Evento}	
+	\begin{checklist}
+		\checkeditem Crear eventos
+		\item Actualizar evento
+		\checkeditem Ver listado de eventos
+		\checkeditem Eliminar un evento
+	\end{checklist}
+
+	\subsection[Estado de grupo]{Grupo}	
+	\begin{checklist}
+		\checkeditem Crear un grupo
+		\item Actualizar grupo
+		\checkeditem Ver listado de grupos
+		\item Eliminar un grupo
+	\end{checklist}
+
+	\subsection[Estado de grupo de investigación]{Grupo de investigación}	
+	\begin{checklist}
+		\checkeditem Crear grupo de investigación
+		\item Actualizar grupo de investigación
+		\checkeditem Ver listado de grupos de investigación
+		\item Eliminar grupo de investigación
+	\end{checklist}
+
+	\subsection[Estado de nivel]{Nivel}	
+	\begin{checklist}
+		\checkeditem Crear un nivel
+		\item Actualizar un nivel
+		\checkeditem Ver listado de niveles
+		\checkeditem Eliminar un nivel
+	\end{checklist}
+
+	\subsection[Estado de nivel de competencia]{Nivel de competencia}	
+	\begin{checklist}
+		\checkeditem Crear nivel de competencia
+		\item Actualizar nivel de competencia
+		\checkeditem Ver listado niveles de competencia
+		\item Eliminar nivel de competencia
+	\end{checklist}
+
+	\subsection[Estado de permiso]{Permiso}	
+	\begin{checklist}
+		\checkeditem Crear permiso
+		\item Actualizar permiso
+		\checkeditem Ver listado de permisos
+		\checkeditem Eliminar permiso
+		\checkeditem Asignar permiso a un rol
+		\checkeditem Consulta de permisos por usuario
+		\item Desactivar permiso
+	\end{checklist}
+
+	\subsection[Estado de programa]{Programa}	
+	\begin{checklist}
+		\checkeditem Crear programa
+		\item Actualizar un programa
+		\checkeditem Ver listado de programas
+		\checkeditem Eliminar un programa
+	\end{checklist}
+
+	\subsection[Estado de programa de grupo de investigación]{Programa grupo de investigación}	
+	\begin{checklist}
+		\checkeditem Crear programa de grupo de investigación
+		\item Actualizar programa de grupo de investigación
+		\checkeditem Ver listado de programas de grupo de investigación
+		\item Eliminar programa de grupo de investigación
+	\end{checklist}
+
+	\subsection[Estado de programa de semillero de investigación]{Programa de semillero de investigación}	
+	\begin{checklist}
+		\checkeditem Crear programa de semillero de investigación
+		\item Actualizar programa de semillero de investigación
+		\checkeditem Ver listado de programas de semillero de investigación
+		\item Eliminar programa de semillero de investigación
+	\end{checklist}
+
+	\subsection[Estado de proyecto]{Proyecto}	
+	\begin{checklist}
+		\checkeditem Crear un proyecto
+		\item Actualizar proyecto
+		\checkeditem Ver listado proyecto
+		\item Eliminar proyecto
+	\end{checklist}
 		
-		Noticia & Los lideres de los semilleros y grupos de investigación pueden publicar noticias referentes a su organización. & 
-		\begin{tabular}{lp{4cm}}	
-			1 & Visualización de noticias en una vista general \\ 
-			\hline 
-			2 & Actualización de noticias\\ 
-			\hline 
-			3 & Registro de noticias con intervalo de visualización. \\
-		\end{tabular} \\
-		\hline
+	\subsection[Estado de repositorio]{Repositorio}	
+	\begin{checklist}
+		\checkeditem Crear repositorio
+		\item Actualizar repositorio
+		\checkeditem Ver listado de repositorios
+		\item Eliminar repositorio
+	\end{checklist}	
+	
+	\subsection[Estado de rol]{Rol}	
+	\begin{checklist}
+		\checkeditem Crear rol
+		\item Actualizar rol
+		\checkeditem Ver listado roles
+		\item Eliminar rol
+	\end{checklist}
+
+	\subsection[Estado de líder semillero]{Líder se semillero}	
+	\begin{checklist}
+		\checkeditem Crear un líder
+		\item Actualizar líder
+		\checkeditem Ver lideres
+		\item Eliminar un líder
+		\item Enviar solicitud para ser líder en un determinado semillero o grupo de investigación
+		\item Verificación de usuarios lideres
+	\end{checklist}
+	
+	\subsection[Estado de rol de semillero]{Rol de semillero}	
+	\begin{checklist}
+		\checkeditem Crear rol de semillero
+		\item Actualizar rol de semillero
+		\checkeditem Ver listado de roles de semillero
+		\item Eliminar rol de semillero
+	\end{checklist}
+	
+	
+	\subsection[Estado de semillero]{Semillero}	
+	\begin{checklist}
+		\checkeditem Crear un semillero
+		\checkeditem Actualizar un semillero
+		\checkeditem Ver listado semillero
+		\checkeditem Eliminar semillero
+	\end{checklist}
 		
-		Actividad & Los lideres de los semilleros y grupos de investigación pueden publicar actividades referentes a su organización. & 
-		\begin{tabular}{lp{4cm}}
-			1 & Gestión de actividades \\
-		\end{tabular} \\
-		\hline
-	\end{tabular}
+	\subsection[Estado de tarea]{Tarea}	
+	\begin{checklist}
+		\checkeditem Crear una tarea
+		\checkeditem Actualizar una tarea
+		\checkeditem Ver listado tareas
+		\checkeditem Eliminar una tarea
+	\end{checklist}
+	
+	\subsection[Estado de detalle tarea]{Detalle tarea}	
+	\begin{checklist}
+		\checkeditem Crear una detalle de tarea
+		\checkeditem Actualizar un detalle tarea
+		\checkeditem Ver listado de detalles de tareas
+		\checkeditem Eliminar un detalle de tarea
+	\end{checklist}
+
+	\subsection[Estado de tipo de actividad]{Tipo de actividad}	
+	\begin{checklist}
+		\checkeditem Crear tipo de actividad
+		\item Actualizar tipo de actividad
+		\checkeditem Ver listado tipo de actividad
+		\checkeditem Eliminar tipo de actividad
+	\end{checklist}
+	
+	
+	\subsection[Estado de tipo curso]{Tipo curso}	
+	\begin{checklist}
+		\checkeditem Crear tipo curso
+		\item Actualizar tipo curso
+		\checkeditem Ver listado de tipos de cursos
+		\item Eliminar tipo curso
+	\end{checklist}
+	
+	
+	\subsection[Estado de tipo de notificación]{Tipo de notificación}	
+	\begin{checklist}
+		\checkeditem Crear un tipo de notificación
+		\item Actualizar un tipo de notificación
+		\checkeditem Ver listado de tipos de notificación
+		\item Eliminar un tipo de notificación
+	\end{checklist}
+	
+	
+	\section[Observación final]{Observación final}
+	Todos los procedimientos almacenados para las opciones CRUD están creados; crear, actualizar, listar y eliminar ya existen. Las vistas respectivas ya han sido desarrolladas. Si se presta atención al \textit{checklist} anterior, se puede observar que la mayoría de las opciones referentes a Actualizar y Eliminar no han sido marcadas, esto es debido a que aun se están ajustando las funciones de los \textit{modelos} y los \textit{controladores} para poder continuar con el desarrollo de estas funcionalidades.
+	
+	\begin{itemize}
+		\item \textbf{Nombre:} Visibilidad web
+		\item \textbf{URL publica:} http://191.102.85.226/visibilidad
+	\end{itemize}
 \end{document}
