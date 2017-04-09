@@ -15,12 +15,13 @@
 	pdfauthor={JULIAN DAVID MR},
 	pdftitle={IMPLEMENTACIÓN DEL SISTEMA SIGEPI},
 	pdfsubject={DESARROLLO DE SOFTWARE},
-	pdfkeywords={SOFTWARE, MDD, MDE},
+	pdfkeywords={SOFTWARE, MDD, MDE, UDLA},
 	pdfproducer={Universidad de la Amazonia},
 	pdfcreator={@anlijudavid}]{hyperref}
 
 \begin{document}
-	\markboth{''SIGEPI''}{''Universidad de la Amazonia''}
+	\markboth{"SIGEPI"}{''Universidad de la Amazonia''}
+	% Paginas iniciales
 	\include{capitulos/portada}
 	\include{capitulos/portada2}
 	\include{capitulos/dedicacion}
@@ -30,15 +31,21 @@
 	\include{capitulos/tabla_contenido}
 	\include{capitulos/tabla_figuras}
 	\include{capitulos/indice_tablas}
-	
-	%---------------------------------------
-	%   TESIS
-	%---------------------------------------
-	\mainmatter %empieza la numeración de las páginas
-	\pagestyle{headings}
+	\include{capitulos/resumen}
 	
 	\include{capitulos/introduccion}
-	\include{capitulos/marco_referencial}
+	
+	% Configuracion
+	\mainmatter %empieza la numeración de las páginas
+	\pagestyle{headings}	
+	
+	% Contenido
+	\include{capitulos/contenido/descgeneral}
+	\include{capitulos/contenido/marcoreferencial}
+		
+	% Finalización
 	\include{capitulos/conclusiones}
+	\include{capitulos/trabajosfuturos}
 	\include{capitulos/bibliografia}
+	\include{capitulos/anexos}
 \end{document}
