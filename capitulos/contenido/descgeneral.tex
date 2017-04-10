@@ -3,10 +3,22 @@
 \subsection[Planteamiento del problema]{Planteamiento del problema}
 
 \subsubsection[Contexto]{Contexto}
+En la búsqueda de mejores procesos que ayuden a la optimización y mejoramiento de la productividad, nuevas metodologías y herramientas han emergido, consigo vienen toda clase de formas para realizar tareas complejas en tiempos relativamente cortos. Un ejemplo claro es el modelado de requisitos, siguiendo el estándar UML se pueden obtener varios esquemas que permiten la visualización de cada proceso por separado desde diferentes puntos de vista en un sistema; casos de uso, clases, bloques, secuencia, etc.
+
+Es cierto que el estándar UML permite la generación de código fuente, pero existe un problema que se puede plantear sobre la misma ideología que mantiene este estándar, dado que se deben seguir estrictamente una serie de normas. Algunas veces es necesario diseñar y crear un sistema siguiendo un conjunto de normas no dadas por un estándar existente, propiamente personalizadas y generalmente creadas desde cero a partir de una base abstracta obtenida desde los requisitos, es decir, crear una serie de reglas de modelado a partir de un grupo de requisitos. Aquí es donde entran en acción las DSL, permitiendo el establecimiento de un conjunto de reglas para el modelado de esquemas personalizados siguiendo como base fundamental los requisitos del sistema. De esta manera, cada proceso que se propone para la construcción del sistema va a seguir estrictamente ese un conjunto de reglas individualizadas.
+
 \subsubsection[Formulación del problema]{Formulación del problema}
 
 \subsection[Justificación]{Justificación}
 
+
 \subsection[Objetivos]{Objetivos}
 \subsubsection[Objetivo general]{Objetivo general}
+Implementar el sistema de información para la gestión de los procesos de presentación, evaluación y seguimiento de los proyectos de investigación en la Universidad de la Amazonia, mediante el tratamiento y aplicación de los resultados obtenidos en el uso de la arquitectura de desarrollo dirigida por modelos, MDD.
+
 \subsubsection[Objetivo especifico]{Objetivo especifico}
+\begin{itemize}
+	\item Procesar y generar resultados (código fuente) a partir de los meta-modelos definidos por los esquemas diseñados en la arquitectura MDD.
+	\item Aplicar el código fuente obtenido por el procesamiento de los meta-modelos en un entorno de desarrollo basado en la web, específicamente la arquitectura de tres capas con .NET MVC.
+	\item Realizar pruebas de rendimiento, usabilidad y seguridad para verificar el cumplimiento de los requisitos no funcionales referentes al mismo.
+\end{itemize}
