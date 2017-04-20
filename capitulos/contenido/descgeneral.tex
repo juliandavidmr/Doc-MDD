@@ -3,48 +3,78 @@
 \subsection[Planteamiento del problema]{Planteamiento del problema}
 
 \subsubsection[Contexto]{Contexto}
-En la búsqueda de mejores procesos que ayuden a la optimización y mejoramiento de la productividad, nuevas metodologías y herramientas han emergido, consigo vienen toda clase de formas para realizar tareas complejas en tiempos relativamente cortos. Un ejemplo claro es el modelado de requisitos, siguiendo el estándar UML se pueden obtener varios esquemas que permiten la visualización de cada proceso por separado desde diferentes puntos de vista en un sistema; casos de uso, clases, bloques, secuencia, etc.
+En la búsqueda de mejores procesos que ayuden a la optimización 
+y mejoramiento de la productividad en el desarrollo de software, 
+nuevas metodologías y herramientas han emergido, consigo vienen 
+diferentes maneras de aplicar la ingeniera en la realización de 
+tareas complejas para tiempos relativamente cortos. Un ejemplo 
+común es el modelado de requisitos, siguiendo el estándar UML 
+se pueden obtener esquemas que permiten la visualización de 
+cada proceso por separado desde diferentes puntos de vista; 
+diagramas de casos de uso, clases, bloques, secuencia, componentes, etc.
 
-Es cierto que el estándar UML permite la generación de código fuente, pero existe un problema que se puede plantear sobre la misma ideología que mantiene este estándar, dado que se deben seguir estrictamente una serie de normas. Algunas veces es necesario diseñar y crear un sistema siguiendo un conjunto de normas no dadas por un estándar existente, propiamente personalizadas y generalmente creadas desde cero a partir de una base abstracta obtenida desde los requisitos, es decir, crear una serie de reglas de modelado a partir de un grupo de requisitos. Aquí es donde entran en acción las DSL, permitiendo el establecimiento de un conjunto de reglas para el modelado de esquemas personalizados siguiendo como base fundamental los requisitos del sistema. De esta manera, cada proceso que se propone para la construcción del sistema va a seguir estrictamente ese conjunto de reglas individualizadas.
-
+Hoy en día, es común encontrar variedades herramientas de 
+modelado UML que permiten la generación de código fuente, 
+pero existe una limitación que se puede plantear sobre 
+la misma ideología 
+que mantiene este mismo estándar, dado que se deben seguir 
+estrictamente una serie de normas. Existen casos en donde es 
+necesario diseñar y crear un sistema de información siguiendo un
+conjunto de normas no dadas por un estándar existente, 
+propiamente personalizadas y generalmente creadas desde cero a 
+partir de una base abstracta obtenida desde los requisitos, es 
+decir, crear una serie de reglas de modelado a partir de un grupo
+de requisitos. Aquí es donde entra en acción el diseño dirigido 
+por modelos, conocido por sus siglas MDD, un paradigma de ingeniería
+de software que permite la manipulación de grandes cantidades de
+requerimientos \cite{nunez2016enfoque}, todo esto siguiendo un conjunto 
+de reglas de modelado de esquemas personalizados con base 
+fundamental en los requisitos. De esta manera, cada proceso que se 
+propone para la construcción del sistema va a seguir 
+estrictamente ese conjunto de reglas individualizadas.
 
 \subsubsection[Formulación del problema]{Formulación del problema}
+Actualmente, desarrollar un sistema de información suele ser 
+
+
 
 \subsection[Justificación]{Justificación}
-El diseño e implementación de sistemas informáticos
-generalmente se efectúa siguiendo la manera
-tradicional, que consiste en tomar como base inicial uno
-o más entornos de desarrollo (en ingles.: Framework) y
-desde ahí se inicia la creación y adecuación de cada elemento que
-va a conformar el sistema, muchas veces esto se lleva a cabo
-manualmente, un ejemplo claro es cuando se usa la
-arquitectura MVC (Modelo, Vista y Controlador) de
-cualquier framework; se construyen individualmente los
-controladores, modelos y vistas. Esta operación requiere
-de bastante tiempo dependiendo de la complejidad del
-proyecto, todo esto sin incluir el tiempo que se requiere
-desde un inicio para modelar los esquemas necesarios en el sistema, como los diagramas UML. Lo anterior implica
-que el desarrollo del sistema debe mantener en
-supervisión para velar por el cumplimiento de
-los requisitos que fueron regidos en la planificación inicial.
+El diseño e implementación de sistemas informáticos generalmente se 
+efectúa siguiendo la manera tradicional, que consiste en tomar como 
+base inicial uno o más entornos de desarrollo (conocido en el ingles 
+como: Framework) y desde ahí se inicia la creación y adecuación de 
+cada elemento que va a conformar el sistema, muchas veces esto se 
+lleva a cabo manualmente, un ejemplo claro es cuando se usa la 
+arquitectura MVC (Modelo, Vista y Controlador) de cualquier framework; 
+se construyen individualmente los controladores, modelos y vistas. 
+Esta operación requiere de bastante tiempo dependiendo de la 
+complejidad del proyecto, todo esto sin incluir el tiempo que se 
+requiere desde un inicio para modelar los esquemas necesarios, como 
+los diagramas UML. Lo anterior implica que el desarrollo del sistema 
+debe mantener en constante supervisión para velar por el cumplimiento 
+de los requisitos que fueron regidos en la planificación inicial.
 
-De esta manera, se puede obtener que el ciclo de vida del
-desarrollo de un sistema de información (SI) está dado en los 
-siguientes ocho pasos: Planificación, análisis, diseño, desarrollo,
-implementación, pruebas, instalación, y mantenimiento.
-Como se mencionaba anteriormente, con el uso de herramientas
-DSL se reduce el tiempo de desarrollo de un SI debido a la eficacia
-que ofrece en el avance de algunos pasos fundamentales. El elemento
-''diseño'' y ''desarrollo'' tienden a trabajar conjuntamente, donde
-el diseño está ligado de forma rigurosa al desarrollo gracias a un
-lenguaje intermediario o DSL.
+El ciclo de vida en el
+desarrollo de un sistema de información (SI) está dado por ocho
+etapas, a continuación se nombran en el orden de ejecución:
+Planificación, análisis, diseño, desarrollo,
+implementación, pruebas, instalación, y mantenimiento. Con el uso de
+herramientas DSL se reduce el tiempo de desarrollo de un SI, 
+debido a la eficacia en el avance de las etapas que suelen tomar mas tiempo.
+El elemento ''diseño'' y ''desarrollo'' tienden a trabajar conjuntamente,
+donde el primero está ligado de forma rigurosa al segundo gracias a un
+lenguaje intermediario, este ultimo conocido como lenguaje de dominio
+especifico, o DSL.
 
-Tal es el caso de la plataforma web SIGEPI, donde optó por la implementación de DSL Tools exclusivo del entorno de desarrollo creado
-por la multinacional Microsoft, conocido como .NET. -- Esta
-herramienta es una notación del lenguaje de dominio especifico,
-ofrece un complejo Kit de desarrollo de software (SDK) que se integra
-totalmente con el entorno de desarrollo integrado (IDE), Visual Studio. Todo esto se adapta completamente con los lineamientos establecidos por Universidad de la Amazonia, ya que el sistema puede
-ser integrado simultáneamente con el sistema misional de la misma, Chairá.
+Tal es el caso de la plataforma web SIGEPI (Sistema de información 
+para la gestión de proyectos de investigación), donde se optó por 
+la implementación de la herramienta DSL Tools, un entorno de
+desarrollo creado por la multinacional Microsoft, conocido 
+como ''.NET''. Esta herramienta es una notación del lenguaje de 
+dominio especifico, ofrece un complejo Kit de desarrollo de 
+software (SDK) que se integra totalmente con el entorno de 
+desarrollo integrado, Visual Studio. Todo esto se adapta completamente con los lineamientos establecidos por Universidad 
+de la Amazonia, ya que el sistema puede ser integrado simultáneamente con el sistema misional de la misma, Chairá.
 
 
 

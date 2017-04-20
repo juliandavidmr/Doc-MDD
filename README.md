@@ -17,3 +17,13 @@ Documentación del proyecto de grado, Desarrollo dirigido por modelos (MDD)
 ### **Temas**
 - Tablas:
     - [Items en tablas](http://tex.stackexchange.com/questions/154570/itemize-environment-within-a-tabular-environment)
+
+### **Normas**
+- [ISO 9001](https://es.wikipedia.org/wiki/ISO_9001)
+
+
+
+http://flanagan.ugr.es/docencia/2005-2006/2/apuntes/ciclovida.pdf
+https://msdn.microsoft.com/en-us/library/ee943825.aspx
+https://msdn.microsoft.com/en-us/library/bb126327.aspx
+https://msdn.microsoft.com/en-us/library/bb126259.aspx
