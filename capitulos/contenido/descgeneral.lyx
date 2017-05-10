@@ -1,0 +1,333 @@
+#LyX file created by tex2lyx 2.2
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/jdavid/Proyectos/Doc-MDD/capitulos/contenido/
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding iso8859-1
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "helvet" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family sfdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "IMPLEMENTACIÓN DEL SISTEMA SIGEPI"
+\pdf_author "JULIAN DAVID MR"
+\pdf_subject "DESARROLLO DE SOFTWARE"
+\pdf_keywords "SOFTWARE, MDD, MDE, UDLA"
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref section
+\pdf_pdfusetitle 0
+\pdf_quoted_options "pdftex,pdfproducer={Universidad de la Amazonia},pdfcreator={@anlijudavid}"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 4
+\tocdepth 4
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+DESCRIPCIÓN GENERAL DEL PROYECTO
+\end_layout
+
+\end_inset
+
+DESCRIPCIÓN GENERAL DEL PROYECTO
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+Planteamiento del problema
+\end_layout
+
+\end_inset
+
+Planteamiento del problema
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+Contexto
+\end_layout
+
+\end_inset
+
+Contexto
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+En la búsqueda de mejores procesos que ayuden a la optimización y mejoramiento de la productividad en el desarrollo de software, nuevas metodologías y herramientas han emergido, consigo vienen diferentes maneras de aplicar la ingeniera en la realización de tareas complejas para tiempos relativamente cortos. Un ejemplo común es el modelado de requisitos, siguiendo el estándar UML se pueden obtener esquemas que permiten la visualización de cada proceso por separado desde diferentes puntos de vista; diagramas de casos de uso, clases, bloques, secuencia, componentes, etc.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Hoy en día, es común encontrar variedades herramientas de modelado UML que permiten la generación de código fuente, pero existe una limitación que se puede plantear sobre la misma ideología que mantiene este mismo estándar, dado que se deben seguir estrictamente una serie de normas. Existen casos en donde es necesario diseñar y crear un sistema de información siguiendo un conjunto de normas no dadas por un estándar existente, propiamente personalizadas y generalmente creadas desde cero a partir de una base abstracta obtenida desde los requisitos, es decir, crear una serie de reglas de modelado a partir de un grupo de requisitos. Aquí es donde entra en acción el diseño dirigido por modelos, conocido por sus siglas MDD, un paradigma de ingeniería de software que permite la manipulación de grandes cantidades de requerimientos 
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "nunez2016enfoque"
+
+\end_inset
+
+, todo esto siguiendo un conjunto de reglas de modelado de esquemas personalizados con base fundamental en los requisitos. De esta manera, cada proceso que se propone para la construcción del sistema va a seguir estrictamente ese conjunto de reglas individualizadas.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+Formulación del problema
+\end_layout
+
+\end_inset
+
+Formulación del problema
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Actualmente, desarrollar un sistema de información suele ser
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+Justificación
+\end_layout
+
+\end_inset
+
+Justificación
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El diseño e implementación de sistemas informáticos generalmente se efectúa siguiendo la manera tradicional, que consiste en tomar como base inicial uno o más entornos de desarrollo (conocido en el ingles como: Framework) y desde ahí se inicia la creación y adecuación de cada elemento que va a conformar el sistema, muchas veces esto se lleva a cabo manualmente, un ejemplo claro es cuando se usa la arquitectura MVC (Modelo, Vista y Controlador) de cualquier framework; se construyen individualmente los controladores, modelos y vistas. Esta operación requiere de bastante tiempo dependiendo de la complejidad del proyecto, todo esto sin incluir el tiempo que se requiere desde un inicio para modelar los esquemas necesarios, como los diagramas UML. Lo anterior implica que el desarrollo del sistema debe mantener en constante supervisión para velar por el cumplimiento de los requisitos que fueron regidos en la planificación inicial.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El ciclo de vida en el desarrollo de un sistema de información (SI) está dado por ocho etapas, a continuación se nombran en el orden de ejecución: Planificación, análisis, diseño, desarrollo, implementación, pruebas, instalación, y mantenimiento. Con el uso de herramientas DSL se reduce el tiempo de desarrollo de un SI, debido a la eficacia en el avance de las etapas que suelen tomar mas tiempo. El elemento 
+\begin_inset Quotes erd
+\end_inset
+
+diseño
+\begin_inset Quotes erd
+\end_inset
+
+ y 
+\begin_inset Quotes erd
+\end_inset
+
+desarrollo
+\begin_inset Quotes erd
+\end_inset
+
+ tienden a trabajar conjuntamente, donde el primero está ligado de forma rigurosa al segundo gracias a un lenguaje intermediario, este ultimo conocido como lenguaje de dominio especifico, o DSL.
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Tal es el caso de la plataforma web SIGEPI (Sistema de información para la gestión de proyectos de investigación), donde se optó por la implementación de la herramienta DSL Tools, un entorno de desarrollo creado por la multinacional Microsoft, conocido como 
+\begin_inset Quotes erd
+\end_inset
+
+.NET
+\begin_inset Quotes erd
+\end_inset
+
+. Esta herramienta es una notación del lenguaje de dominio especifico, ofrece un complejo Kit de desarrollo de software (SDK) que se integra totalmente con el entorno de desarrollo integrado, Visual Studio. Todo esto se adapta completamente con los lineamientos establecidos por Universidad de la Amazonia, ya que el sistema puede ser integrado simultáneamente con el sistema misional de la misma, Chairá.
+\end_layout
+
+\begin_layout Subsection
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+Objetivos
+\end_layout
+
+\end_inset
+
+Objetivos
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+Objetivo general
+\end_layout
+
+\end_inset
+
+Objetivo general
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Implementar el sistema de información para la gestión de los procesos de presentación, evaluación y seguimiento de los proyectos de investigación en la Universidad de la Amazonia, mediante el tratamiento y aplicación de los resultados obtenidos en el uso de la arquitectura de desarrollo dirigida por modelos, MDD.
+\end_layout
+
+\begin_layout Subsubsection
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+Objetivo especifico
+\end_layout
+
+\end_inset
+
+Objetivo especifico
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Procesar y generar resultados (código fuente) a partir de los meta-modelos definidos por los esquemas diseñados en la arquitectura MDD. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Aplicar el código fuente obtenido por el procesamiento de los meta-modelos en un entorno de desarrollo basado en la web, específicamente la arquitectura de tres capas de .NET MVC. 
+\end_layout
+
+\begin_layout Itemize
+
+\lang spanish
+Realizar pruebas de rendimiento, usabilidad y seguridad para verificar el cumplimiento de los requisitos no funcionales referentes al mismo. 
+\end_layout
+
+\end_body
+\end_document

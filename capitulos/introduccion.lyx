@@ -1,0 +1,134 @@
+#LyX file created by tex2lyx 2.2
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin /home/jdavid/Proyectos/Doc-MDD/capitulos/
+\textclass book
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding iso8859-1
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "helvet" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family sfdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref true
+\pdf_title "IMPLEMENTACIÓN DEL SISTEMA SIGEPI"
+\pdf_author "JULIAN DAVID MR"
+\pdf_subject "DESARROLLO DE SOFTWARE"
+\pdf_keywords "SOFTWARE, MDD, MDE, UDLA"
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref section
+\pdf_pdfusetitle 0
+\pdf_quoted_options "pdftex,pdfproducer={Universidad de la Amazonia},pdfcreator={@anlijudavid}"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 4
+\tocdepth 4
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 2
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+
+\lang spanish
+
+\begin_inset Argument 1
+status collapsed
+
+
+\begin_layout Standard
+
+\lang spanish
+INTRODUCCIÓN
+\end_layout
+
+\end_inset
+
+INTRODUCCIÓN
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Hoy en día, muchos de los desarrollos de aplicaciones y sistemas informáticos con funcionalidades para automatización de tareas poseen gran demanda. Los tiempos de ejecución y elaboración de un proyecto se reducen cuando herramientas DSL (Lenguaje de dominio especifico) y similares son implementadas, ofreciendo características de generación de código reutilizable, tales como componentes que pueden ser implementados en otros proyectos del mismo tipo. No se trata de una tecnología emergente, las primeras apariciones de los DSL fueron lanzadas a mediados de los 80's. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+Actualmente se pueden encontrar ramificaciones DSL en diferentes aplicaciones, cada una con funcionalidades especificas, tales como MDD, MDA y MDE, siendo estos un conjunto de recursos interoperables que permiten ser usados en el análisis, modelado y construcción de proyectos software. Por otro lado, las nuevas tecnologías han aumentado la cantidad de mecanismos y maneras de generar software, generalmente todos estos siguen la misma filosofía de las DSL, por ejemplo, se pueden encontrar las ORM (Object Relational Mapping) para el control de múltiples gestores de bases de datos a partir de un solo lenguaje base. Del mismo modo, los programadores de software, matemáticos, estadísticos y demás, hacen uso de herramientas de lenguaje de dominio especifico mediante programas de computadora como R, interpretes de expresiones regulares, SQL, entre otros. 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang spanish
+El sistema de gestión documental (SIGEPI) es una plataforma web robusta, que fue creada gracias a la implementación de herramientas de modelado y generación de código, DSL. En la primera parte de este documento se nombran todos aquellos procesos que se siguieron para la generación del código fuente a partir de los esquemas obtenidos después de aplicar el desarrollo dirigido por modelos, también conocido como MDD (en ingles, Model-Driven Development). Posteriormente, se explica la arquitectura de desarrollo que fue aplicada, incluyendo cada una de las librerías y entornos que fueron usados.
+\end_layout
+
+\end_body
+\end_document
