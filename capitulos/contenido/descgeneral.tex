@@ -35,7 +35,7 @@ estrictamente ese conjunto de reglas individualizadas.
 
 \subsubsection[Formulación del problema]{Formulación del problema}
 Actualmente, desarrollar un sistema de información suele ser
-llevado a cabo de la manera clásica, siguiendo una serie de
+llevado a cabo de la manera convencional, siguiendo una serie de
 pasos imprescindibles para todo proyecto.
 Consiste en realizar el modelado del sistema a partir de un
 conjunto de requerimientos. El paso a seguir trata de la
@@ -46,44 +46,60 @@ Controlador); se construye individualmente cada elemento
 según sea la capa correspondiente.
 
 \subsection[Justificación]{Justificación}
-El diseño e implementación de sistemas informáticos generalmente requiere de bastante tiempo dependiendo de la 
-complejidad del proyecto, todo esto sin incluir el tiempo que se 
-requiere desde un inicio para modelar los esquemas necesarios, como 
-los diagramas UML. Lo anterior implica que el desarrollo del sistema 
-debe mantener en constante supervisión para velar por el cumplimiento 
+El desarrollo dirigido por modelos (MDD) es una disciplina que 
+ha ido emergiendo con gran fuerza en los últimos años
+\cite{pons2010desarrollo}. Ha impuesto una nueva forma de
+desarrollar y mantener sistemas software.
+Cuando se desarrolla un SI con los métodos
+convencionales, requiere de bastante tiempo dependiendo de la
+complejidad del mismo, incluyendo el tiempo de
+modelado de esquemas, tales como diagramas UML (Lenguaje de Modelado Unificado). 
+Lo anterior implica que el progreso del sistema 
+debe mantener en constante supervisión, con el fin de velar
+por el cumplimiento 
 de los requisitos que fueron regidos en la planificación inicial.
 
-El ciclo de vida en el
-desarrollo de un sistema de información (SI) está dado por ocho
-etapas, a continuación se nombran en el orden de ejecución:
-Planificación, análisis, diseño, desarrollo,
-implementación, pruebas, instalación, y mantenimiento. Con el uso de
-herramientas DSL se reduce el tiempo de desarrollo de un SI, 
+El ciclo de vida en el desarrollo de un SI está dado por seis
+fases: Planificación y determinación de requisitos, análisis,
+diseño, desarrollo, pruebas e instalación en producción
+\cite{pons2010desarrollo}. Con el uso de un lenguaje de dominio
+especifico se reduce el tiempo de desarrollo de un SI, 
 debido a la eficacia en el avance de las etapas que suelen tomar mas tiempo.
 El elemento ''diseño'' y ''desarrollo'' tienden a trabajar conjuntamente,
 donde el primero está ligado de forma rigurosa al segundo gracias a un
 lenguaje intermediario, este ultimo conocido como lenguaje de dominio
 especifico, o DSL.
 
-Tal es el caso de la plataforma web SIGEPI (Sistema de información 
-para la gestión de proyectos de investigación), donde se optó por 
-la implementación de la herramienta DSL Tools, un entorno de
+Tal es el caso de la plataforma web SIGEPI (Sistema de 
+información para la gestión de proyectos de investigación),
+donde se optó por la implementación de la herramienta DSL Tools,
+un entorno de
 desarrollo creado por la multinacional Microsoft, conocido 
 como ''.NET''. Esta herramienta es una notación del lenguaje de 
 dominio especifico, ofrece un complejo Kit de desarrollo de 
 software (SDK) que se integra totalmente con el entorno de 
-desarrollo integrado, Visual Studio. Todo esto se adapta completamente con los lineamientos establecidos por Universidad 
-de la Amazonia, ya que el sistema puede ser integrado simultáneamente con el sistema misional de la misma, Chairá.
-
-
+desarrollo integrado, Visual Studio. Todo esto se adapta
+completamente con los lineamientos establecidos por Universidad 
+de la Amazonia, ya que el sistema puede ser integrado
+simultáneamente con el sistema misional de la misma, Chairá.
 
 \subsection[Objetivos]{Objetivos}
 \subsubsection[Objetivo general]{Objetivo general}
-Implementar el sistema de información para la gestión de los procesos de presentación, evaluación y seguimiento de los proyectos de investigación en la Universidad de la Amazonia, mediante el tratamiento y aplicación de los resultados obtenidos en el uso de la arquitectura de desarrollo dirigida por modelos, MDD.
+Implementar el sistema de información SIGEPI para la gestión de
+los procesos de presentación, evaluación y seguimiento de los
+proyectos de investigación en la Universidad de la Amazonia,
+mediante el tratamiento y aplicación de los resultados obtenidos
+en el uso de la metodología de desarrollo dirigida por modelos.
 
 \subsubsection[Objetivo especifico]{Objetivo especifico}
 \begin{itemize}
-	\item Procesar y generar resultados (código fuente) a partir de los meta-modelos definidos por los esquemas diseñados en la arquitectura MDD.
-	\item Aplicar el código fuente obtenido por el procesamiento de los meta-modelos en un entorno de desarrollo basado en la web, específicamente la arquitectura de tres capas de .NET MVC.
-	\item Realizar pruebas de rendimiento, usabilidad y seguridad para verificar el cumplimiento de los requisitos no funcionales referentes al mismo.
+	\item Preparar los esquemas modelados por DSL y generar
+	el código fuente a partir de los metamodelos diseñados.
+	\item Aplicar el código fuente obtenido por el procesamiento
+	de los meta-modelos en un entorno de desarrollo basado en la
+	web, específicamente la arquitectura de tres capas de .NET
+	MVC.
+	\item Realizar pruebas de rendimiento, usabilidad y
+	seguridad para verificar el cumplimiento de los requisitos
+	no funcionales.
 \end{itemize}
