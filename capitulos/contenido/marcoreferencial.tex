@@ -3,22 +3,49 @@
 \subsection[Marco teórico]{Marco teórico}
 
 \subsubsection[Desarrollo Dirigido por Modelos. Conceptos]{Desarrollo Dirigido por Modelos. Conceptos}
-El desarrollo dirigido por modelos es un paradigma que resuelve
+El desarrollo dirigido por modelos (MDD) es un paradigma que resuelve
 muchos inconvenientes en el desarrollo de software, la causa 
 surgió desde los inicios de la década de los 60s, cuando se
-introdujo el concepto de "crisis del software"
-\cite{pons2010desarrollo}, originado por la complejidad y el
-costo requerido por las necesidades del cliente.
+introdujo el concepto de ''crisis del software'', originado por la complejidad y el costo requerido por las necesidades del cliente \cite{pons2010desarrollo}.
+MDD enriquece el proceso de desarrollo a partir de herramientas 
+especializadas, destaca una relación entre lo abstracto y el código
+fuente. La abstracción está representada por modelos, por tanto 
+estos requieren de una o más fases de transformación para 
+finalmente obtener el código [ver figura \ref{fig_transcode}].
+
+\begin{displaymath}
+	\xymatrix{
+		*+<1cm>[F-,]{Modelo}\ar[r] 
+		& *+<1cm>[o][F]{M2T/M2M}\ar[r]
+		& ... \ar[r]
+		& *+<1cm>[F-,]{Modelo}\ar[r]
+		& *+<.5cm>[F]{Codigo}
+	}
+\end{displaymath}
+\captionof{figure}{Transformación de código}
+\label{fig_transcode}
+
 
 \subsubsection[DSL, Lenguaje de dominio especifico]{Lenguaje de dominio especifico}
-lalalalalalala
+El lenguaje de dominio especifico eleva el nivel de abstracción más allá
+que los lenguajes de programación para especificar una solución al
+problema usando conceptos de dominio \cite{kelly2008domain}. 
+Generalmente se le encuentra como una notación gráfica, cuyos
+modelos resultan en un conjunto de elementos y relaciones entre si.
 
-\subsubsection[DSL \& Meta modelos]{DSL \& Meta modelos}
-lalalalalalalalalalalalalalalalalala
+\begin{displaymath}
+	\xymatrix{
+		\underline{Requerimientos}\ar@/_1mm/[r] 
+		& *+<1cm>[o][F]{\texttt{Abstracción}}\ar[r]
+		& *+<1cm>[F-,]{\textbf{DSL}}
+	}
+\end{displaymath}
+\captionof{figure}{Abstracción de DSL}
+\label{fig_abs_dsl}
+
+\subsubsection[Meta modelos]{Meta modelos}
+
 
 \subsubsection[Arquitectura MVC]{Arquitectura MVC}
-olaololaolaolaolaola olaolaolaolaolaolao laolaolao laolaolaola
-
 
 \subsubsection[Framework de desarrollo Ext.NET]{Framework de desarrollo Ext.NET}
-dsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsdsd

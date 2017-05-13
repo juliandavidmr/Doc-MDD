@@ -12,6 +12,12 @@
 \usepackage{graphicx}
 \usepackage{array}
 \usepackage{cite}
+\usepackage[all]{xy}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{microtype}					%Makes pdf look better.
 
 \usepackage[left=3.00cm, right=3.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \author{Julian David Mora Ramos}
@@ -23,12 +29,8 @@
 	pdfkeywords={SOFTWARE, MDD, MDE, UDLA},
 	pdfproducer={Universidad de la Amazonia},
 	pdfcreator={@anlijudavid}]{hyperref}
-\usepackage{microtype}					%Makes pdf look better.
 
 \begin{document}
-	\frontmatter
-	\pagenumbering{roman}
-	
 	\markboth{"SIGEPI"}{''Universidad de la Amazonia''}
 	\pagenumbering{arabic} % para empezar la numeración con números
 	% Paginas iniciales
@@ -41,22 +43,29 @@
 	\include{capitulos/tabla_contenido}
 	\include{capitulos/tabla_figuras}
 	\include{capitulos/indice_tablas}
-	\include{capitulos/resumen}	
+	\include{capitulos/resumen}
 	\include{capitulos/introduccion}
 	
 	% Configuracion
 	\mainmatter %empieza la numeración de las páginas
 	\pagestyle{headings}
 	
+	% Numeracion de paginas. "Pagina x de xx"
+	%\pagestyle{fancy}
+	%\fancyhf{}	
+	%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}	
+	
 	% Contenido
 	\include{capitulos/contenido/descgeneral}
 	\include{capitulos/contenido/marcoreferencial}
 		
 	% Finalización
+	\include{capitulos/glosario}
 	\include{capitulos/conclusiones}
 	\include{capitulos/trabajosfuturos}
 	\include{capitulos/bibliografia}
-	\bibliographystyle{plain}
+	
+	\bibliographystyle{alpha}
 	\bibliography{referencias}
 	
 	\include{capitulos/anexos}
