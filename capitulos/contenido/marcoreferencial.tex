@@ -4,14 +4,15 @@
 
 \subsubsection[Desarrollo Dirigido por Modelos. Conceptos]{Desarrollo Dirigido por Modelos. Conceptos}
 El desarrollo dirigido por modelos (MDD) es un paradigma que resuelve
-muchos inconvenientes en el desarrollo de software, la causa 
+inconvenientes relevantes en el desarrollo de software, la causa 
 surgió desde los inicios de la década de los 60s, cuando se
-introdujo el concepto de ''crisis del software'', originado por la complejidad y el costo requerido por las necesidades del cliente \cite{pons2010desarrollo}.
+introdujo el concepto de ''crisis del software'', originado por 
+la complejidad y el costo requerido por las necesidades del cliente \cite{pons2010desarrollo}.
 MDD enriquece el proceso de desarrollo a partir de herramientas 
 especializadas, destaca una relación entre lo abstracto y el código
 fuente. La abstracción está representada por modelos, por tanto 
-estos requieren de una o más fases de transformación para 
-finalmente obtener el código [ver figura \ref{fig_transcode}].
+estos requieren de una serie de fases culminar la transformación hasta
+obtener el código fuente [ver figura \ref{fig_transcode}].
 
 \begin{displaymath}
 	\xymatrix{
@@ -22,9 +23,8 @@ finalmente obtener el código [ver figura \ref{fig_transcode}].
 		& *+<.5cm>[F]{Codigo}
 	}
 \end{displaymath}
-\captionof{figure}{Transformación de código}
+\captionof{figure}{Proceso de transformación de código}
 \label{fig_transcode}
-
 
 \subsubsection[DSL, Lenguaje de dominio especifico]{Lenguaje de dominio especifico}
 El lenguaje de dominio especifico eleva el nivel de abstracción más allá
@@ -36,16 +36,14 @@ modelos resultan en un conjunto de elementos y relaciones entre si.
 \begin{displaymath}
 	\xymatrix{
 		\underline{Requerimientos}\ar@/_1mm/[r] 
-		& *+<1cm>[o][F]{\texttt{Abstracción}}\ar[r]
+		& *+<1cm>[o][F]{\texttt{Capa de abstracción}}\ar[r]
 		& *+<1cm>[F-,]{\textbf{DSL}}
 	}
 \end{displaymath}
-\captionof{figure}{Abstracción de DSL}
+\captionof{figure}{Flujo de abstracción DSL}
 \label{fig_abs_dsl}
 
 \subsubsection[Meta modelos]{Meta modelos}
 
 
-\subsubsection[Arquitectura MVC]{Arquitectura MVC}
-
-\subsubsection[Framework de desarrollo Ext.NET]{Framework de desarrollo Ext.NET}
+\subsubsection[Arquitectura de desarrollo]{Arquitectura de desarrollo}
