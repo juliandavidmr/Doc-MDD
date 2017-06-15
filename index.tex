@@ -5,9 +5,26 @@
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
-\setcounter{section}{0}
+\setcounter{secnumdepth}{0}
+\setcounter{tocdepth}{1}
+% \newcounter{ns}
+% \addtocounter{ns}{1} 
+% \setcounter{secnumdepth}{4}
+% \setcounter{section}{0}
+% \setcounter{tocdepth}{1}
+\usepackage{titlesec}
+
+% -------------------------
+\titleformat{\chapter}[block]
+{\normalfont\huge\bfseries}{\thechapter}{20pt}{}
+\titlespacing*{\chapter}
+{0pt}{20pt}{20pt}
+
+\setcounter{tocdepth}{6}
+\setcounter{secnumdepth}{6}
+\setcounter{chapter}{1}
+
+% -------------------------
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{array}
@@ -17,7 +34,7 @@
 \usepackage{lastpage}
 \usepackage{caption}
 \usepackage{subcaption}
-\usepackage{microtype}					%Makes pdf look better.
+\usepackage{microtype}		%Makes pdf look better.
 
 \usepackage[left=3.00cm, right=3.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \author{Julian David Mora Ramos}
@@ -33,6 +50,8 @@
 \begin{document}
 	\markboth{"SIGEPI"}{''Universidad de la Amazonia''}
 	\pagenumbering{arabic} % para empezar la numeración con números
+	
+	\setcounter{secnumdepth}{1}
 	% Paginas iniciales
 	\include{capitulos/portada}
 	\include{capitulos/portada2}
