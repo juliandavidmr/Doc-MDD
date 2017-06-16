@@ -1,6 +1,9 @@
 # **Documentación proyecto**
 
-Documentación del proyecto de grado, Desarrollo dirigido por modelos (MDD)
+Documentación del proyecto de grado, Desarrollo dirigido por modelos (MDD).
+
+[Ver código fuente _(Latex)_](./index.tex) -
+[Ver PDF completo](./index.pdf)
 
 ### **Repositorios**
 
@@ -22,6 +25,7 @@ Documentación del proyecto de grado, Desarrollo dirigido por modelos (MDD)
 - [ISO 9001](https://es.wikipedia.org/wiki/ISO_9001)
 
 
+### Otros
 
 http://flanagan.ugr.es/docencia/2005-2006/2/apuntes/ciclovida.pdf
 https://msdn.microsoft.com/en-us/library/ee943825.aspx

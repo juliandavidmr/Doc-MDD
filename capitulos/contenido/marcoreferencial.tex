@@ -43,4 +43,37 @@ modelos resultan en un conjunto de elementos y relaciones entre si.
 \captionof{figure}{Flujo de abstracción DSL}
 \label{fig_abs_dsl}
 
-\subsection[Arquitectura de desarrollo]{Arquitectura de desarrollo}
+\subsection{Arquitectura de desarrollo}
+
+La arquitectura de desarrollo aplicada en este proyecto 
+consiste de un método de construcción de sistemas interactivos,
+esta forma ofrece al usuario programador un conjunto completo 
+de herramientas de trabajo en paralelo mediante múltiples 
+canales e interfaces de usuario \cite{lucassen2006mvc}. En el 
+contexto actual, este patrón de arquitectura MVC
+(Modelo, Vista y Controlador)\cite{leff2001web} 
+ha sido implementado con base principal en las tecnologías de
+desarrollo dadas por la compañía estadounidense Microsoft, 
+[ver figura \ref{arq_des_mvc}].
+
+\centering
+\begin{tikzpicture}[node distance=1cm, auto,]
+	%nodes
+	\node[punkt] (market) {Modelos (M)};
+	\node[punkt, inner sep=5pt,below=0.5cm of market]
+	(formidler) {Controladores (C)};
+	% We make a dummy figure to make everything look nice.
+	\node[above=of market] (dummy) {};
+	\node[right=of dummy] (t) {APIs del Sistema}
+	edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
+	edge[pil, bend left=45] (formidler.east); % .east since we want
+	% consistent style
+	\node[left=of dummy] (g) {Intercambio de datos}
+	edge[pil, bend right=45] (market.west)
+	edge[pil, bend right=45] (formidler.west)
+	edge[pil,<->, bend left=45] node[auto] {Vistas (V)} (t);
+\end{tikzpicture}
+\vspace{1em}
+
+\captionof{figure}{Arquitectura de desarrollo MVC}
+\label{arq_des_mvc}

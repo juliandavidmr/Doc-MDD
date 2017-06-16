@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{book}
+\documentclass[12pt,oneside,a4paper]{book}
 \usepackage[latin1]{inputenc}
 \usepackage[english, spanish]{babel}	%For languages characters and hyphenation
 \usepackage{amsmath}
@@ -50,6 +50,29 @@
 \titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 % --------------------------------------------------------
 
+% -----------------Config de grafica MVC------------------
+\usepackage{tikz}
+\usetikzlibrary{arrows,positioning} 
+\tikzset{
+	%Define standard arrow tip
+	>=stealth',
+	%Define style for boxes
+	punkt/.style={
+		rectangle,
+		rounded corners,
+		draw=black, very thick,
+		text width=6.5em,
+		minimum height=2em,
+		text centered},
+	% Define arrow style
+	pil/.style={
+		->,
+		thick,
+		shorten <=2pt,
+		shorten >=2pt,}
+}
+% --------------------------------------------------------
+
 \begin{document}
 	\markboth{"SIGEPI"}{''Universidad de la Amazonia''}
 	\pagenumbering{arabic} % para empezar la numeración con números
@@ -64,17 +87,11 @@
 	\include{capitulos/declaracion}
 	\include{capitulos/resumen}
 	
-	% ------- Numeracion de paginas. "Pagina x de xx" --------
-	% \pagestyle{fancy}
-	% \fancyhf{}	
-	% \rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}	
-	% --------------------------------------------------------
-
 	\tableofcontents
 	\listoffigures	
 	% Empieza la numeración de las páginas	
 	\mainmatter
-	
+		
 	% Contenido
 	\include{capitulos/introduccion}
 	\include{capitulos/contenido/descgeneral}
