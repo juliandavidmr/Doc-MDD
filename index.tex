@@ -1,30 +1,9 @@
 \documentclass[12pt,a4paper]{book}
 \usepackage[latin1]{inputenc}
 \usepackage[english, spanish]{babel}	%For languages characters and hyphenation
-\usepackage{helvet}
-\renewcommand{\familydefault}{\sfdefault}
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\setcounter{secnumdepth}{0}
-\setcounter{tocdepth}{1}
-% \newcounter{ns}
-% \addtocounter{ns}{1} 
-% \setcounter{secnumdepth}{4}
-% \setcounter{section}{0}
-% \setcounter{tocdepth}{1}
 \usepackage{titlesec}
-
-% -------------------------
-\titleformat{\chapter}[block]
-{\normalfont\huge\bfseries}{\thechapter}{20pt}{}
-\titlespacing*{\chapter}
-{0pt}{20pt}{20pt}
-
-\setcounter{tocdepth}{6}
-\setcounter{secnumdepth}{6}
-\setcounter{chapter}{1}
-
-% -------------------------
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{array}
@@ -35,7 +14,6 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{microtype}		%Makes pdf look better.
-
 \usepackage[left=3.00cm, right=3.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \author{Julian David Mora Ramos}
 \title{Proyecto, implementación de SIGEPI}
@@ -43,45 +21,69 @@
 	pdfauthor={JULIAN DAVID MR},
 	pdftitle={IMPLEMENTACIÓN DEL SISTEMA SIGEPI},
 	pdfsubject={DESARROLLO DE SOFTWARE},
-	pdfkeywords={SOFTWARE, MDD, MDE, UDLA},
+	pdfkeywords={SOFTWARE, MDD, MDE, UDLA, DOCUMENTACIÓN, DESARROLLO},
 	pdfproducer={Universidad de la Amazonia},
 	pdfcreator={@anlijudavid}]{hyperref}
+
+% -------------------------
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}	
+% -------------------------
+
+% ----------------Tamaño de texto Chapters-----------------
+\newcommand{\chapfnt}{\fontsize{16}{19}}
+\newcommand{\secfnt}{\fontsize{14}{17}}
+\newcommand{\ssecfnt}{\fontsize{12}{14}}
+
+\titleformat{\chapter}[display]
+{\normalfont\chapfnt\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\chapfnt}
+
+\titleformat{\section}
+{\normalfont\secfnt\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalfont\ssecfnt\bfseries}{\thesubsection}{1em}{}
+
+\titlespacing*{\chapter} {0pt}{50pt}{40pt}
+\titlespacing*{\section} {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% --------------------------------------------------------
 
 \begin{document}
 	\markboth{"SIGEPI"}{''Universidad de la Amazonia''}
 	\pagenumbering{arabic} % para empezar la numeración con números
 	
-	\setcounter{secnumdepth}{1}
 	% Paginas iniciales
 	\include{capitulos/portada}
-	\include{capitulos/portada2}
+	% \include{capitulos/portada2}
+	\include{capitulos/portada0}
 	\include{capitulos/dedicacion}
 	\include{capitulos/agradecimientos}
 	\include{capitulos/aceptacion}
 	\include{capitulos/declaracion}
-	\include{capitulos/tabla_contenido}
-	\include{capitulos/tabla_figuras}
-	\include{capitulos/indice_tablas}
 	\include{capitulos/resumen}
-	\include{capitulos/introduccion}
 	
-	% Configuracion
-	\mainmatter %empieza la numeración de las páginas
-	\pagestyle{headings}
-	
-	% Numeracion de paginas. "Pagina x de xx"
-	%\pagestyle{fancy}
-	%\fancyhf{}	
-	%\rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}	
+	% ------- Numeracion de paginas. "Pagina x de xx" --------
+	% \pagestyle{fancy}
+	% \fancyhf{}	
+	% \rfoot{Página \thepage \hspace{1pt} de \pageref{LastPage}}	
+	% --------------------------------------------------------
+
+	\tableofcontents
+	\listoffigures	
+	% Empieza la numeración de las páginas	
+	\mainmatter
 	
 	% Contenido
+	\include{capitulos/introduccion}
 	\include{capitulos/contenido/descgeneral}
 	\include{capitulos/contenido/marcoreferencial}
-		
+	\include{capitulos/procesos}
+	
 	% Finalización
 	\include{capitulos/glosario}
 	\include{capitulos/conclusiones}
-	\include{capitulos/trabajosfuturos}
 	% \include{capitulos/bibliografia}
 	
 	\bibliographystyle{alpha}
