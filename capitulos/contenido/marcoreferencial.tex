@@ -56,23 +56,24 @@ ha sido implementado con base principal en las tecnologías de
 desarrollo dadas por la compañía estadounidense Microsoft, 
 [ver figura \ref{arq_des_mvc}].
 
-\centering
-\begin{tikzpicture}[node distance=1cm, auto,]
-	%nodes
-	\node[punkt] (market) {Modelos (M)};
-	\node[punkt, inner sep=5pt,below=0.5cm of market]
-	(formidler) {Controladores (C)};
-	% We make a dummy figure to make everything look nice.
-	\node[above=of market] (dummy) {};
-	\node[right=of dummy] (t) {APIs del Sistema}
-	edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
-	edge[pil, bend left=45] (formidler.east); % .east since we want
-	% consistent style
-	\node[left=of dummy] (g) {Intercambio de datos}
-	edge[pil, bend right=45] (market.west)
-	edge[pil, bend right=45] (formidler.west)
-	edge[pil,<->, bend left=45] node[auto] {Vistas (V)} (t);
-\end{tikzpicture}
+\begin{center}
+	\begin{tikzpicture}[node distance=1cm, auto,]
+		%nodes
+		\node[punkt] (market) {Modelos (M)};
+		\node[punkt, inner sep=5pt,below=0.5cm of market]
+		(formidler) {Controladores (C)};
+		% We make a dummy figure to make everything look nice.
+		\node[above=of market] (dummy) {};
+		\node[right=of dummy] (t) {APIs del Sistema}
+		edge[pil,bend left=45] (market.east) % edges are used to connect two nodes
+		edge[pil, bend left=45] (formidler.east); % .east since we want
+		% consistent style
+		\node[left=of dummy] (g) {Intercambio de datos}
+		edge[pil, bend right=45] (market.west)
+		edge[pil, bend right=45] (formidler.west)
+		edge[pil,<->, bend left=45] node[auto] {Vistas (V)} (t);
+	\end{tikzpicture}
+\end{center}
 \vspace{1em}
 
 \captionof{figure}{Arquitectura de desarrollo MVC}
