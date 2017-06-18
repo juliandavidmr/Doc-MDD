@@ -73,9 +73,12 @@
 }
 % --------------------------------------------------------
 
+% ------------Permite renderizar muchas tablas------------
+\maxdeadcycles=1000
+% --------------------------------------------------------
+
 \begin{document}
 	\markboth{"SIGEPI"}{''Universidad de la Amazonia''}
-	\pagenumbering{arabic} % para empezar la numeración con números
 	
 	% Paginas iniciales
 	\include{capitulos/portada}
@@ -87,7 +90,16 @@
 	\include{capitulos/resumen}
 	
 	\tableofcontents
-	\listoffigures	
+	
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+	\listoffigures % indice de figuras
+	
+	\cleardoublepage
+	\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
+	\listoftables % indice de tablas
+	
+	% \pagenumbering{arabic} % para empezar la numeración con números
 	% Empieza la numeración de las páginas	
 	\mainmatter
 		
@@ -96,6 +108,7 @@
 	\include{capitulos/contenido/descgeneral}
 	\include{capitulos/contenido/marcoreferencial}
 	\include{capitulos/procesos}
+	\include{capitulos/diccionariodatos}
 	
 	% Finalización
 	\include{capitulos/glosario}

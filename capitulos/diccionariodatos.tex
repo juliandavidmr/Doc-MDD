@@ -1,0 +1,825 @@
+\chapter{Diccionario de datos}
+
+
+\begin{table}
+	\caption{tableTableUsuario}
+	\label{labelTableUsuario}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		UserIdUsuario & VARCHAR(45) & Yes & Yes & No &  & \\ \hline 
+		RolFKIdRol & INT & Yes & No & Yes &  & \\ \hline 
+		UserNombreUsuario & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		UserCorreo & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		UserNombres & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		UserApellidos & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableSemillero}
+	\label{labelTableSemillero}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		SmlrIdSemillero & INT & Yes & Yes & No &  & \\ \hline 
+		SmlrNombre & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		SmlrDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		SmlrRutaLogo & TEXT & Yes & No & No &  & \\ \hline 
+		SmlrMision & TEXT & Yes & No & No &  & \\ \hline 
+		SmlrVision & TEXT & Yes & No & No &  & \\ \hline 
+		SmlrRuta & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		SmlrSigla & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		SmlrJustificacion & TEXT & Yes & No & No &  & \\ \hline 
+		SmlrMetodologiaTrabajo & TEXT & Yes & No & No &  & \\ \hline 
+		SmlrAreasTrabajo & TEXT & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableIntegrantesSemillero}
+	\label{labelTableIntegrantesSemillero}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		IsmlIdIntegrante & INT & Yes & Yes & No &  & \\ \hline 
+		UserFKIdUsuario & BIGINT & Yes & No & Yes &  & \\ \hline 
+		SmlrFKIdSemillero & INT & Yes & No & Yes &  & \\ \hline 
+		IsmlFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		IsmlEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableRol}
+	\label{labelTableRol}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		RolIdRol & INT & Yes & Yes & No &  & \\ \hline 
+		RolNombreRol & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTablePermisos}
+	\label{labelTablePermisos}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		PrmsIdPermiso & INT & Yes & Yes & No &  & \\ \hline 
+		PrmsNombrePermiso & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		PrmsIcono & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableSubpermisos}
+	\label{labelTableSubpermisos}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		SpmsIdSubpermiso & INT & Yes & Yes & No &  & \\ \hline 
+		SpmsNombreSubpermiso & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		SpmsURL & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		PrmsFKIdPermiso & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableMenuUsuario}
+	\label{labelTableMenuUsuario}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		RolFKIdRol & INT & Yes & Yes & Yes &  & \\ \hline 
+		SpmsFKIdSubpermiso & INT & Yes & Yes & Yes &  & \\ \hline 
+		MusrEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableRepositorio}
+	\label{labelTableRepositorio}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		RepoIdRepositorio & INT & Yes & Yes & No &  & \\ \hline 
+		RepoNombre & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		RepoDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		RepoRuta & TEXT & Yes & No & No &  & \\ \hline 
+		RepoEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableDocumento}
+	\label{labelTableDocumento}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		DocuIdDocumento & INT & Yes & Yes & No &  & \\ \hline 
+		DocuNombre & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		DocuRuta & TEXT & Yes & No & No &  & \\ \hline 
+		DocuFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		DocuEstado & VARCHAR(45) & No & No & No &  & \\ \hline 
+		UserFKIdUsuario & BIGINT & Yes & No & Yes &  & \\ \hline 
+		RepoFKIdRepositorio & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableCorreosEnviados}
+	\label{labelTableCorreosEnviados}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		CrnvIdCorreoEnviado & INT & Yes & Yes & No &  & \\ \hline 
+		CrnvTipo & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		CrnvDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		CrnvEstadoEnvio & VARCHAR(50) & Yes & No & No &  & \\ \hline 
+		CrnvFechaEnvio & DATETIME & Yes & No & No &  & \\ \hline 
+		SmlrFKIdSemillero & INT & Yes & No & Yes &  & \\ \hline 
+		UserFKDestinatario & VARCHAR(45) & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableAccesoSistema}
+	\label{labelTableAccesoSistema}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		AstmIdAcceso & BIGINT & Yes & Yes & No &  & \\ \hline 
+		AstmFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		AstmIP & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		UserFKIdUsuario & BIGINT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableSolicitudes}
+	\label{labelTableSolicitudes}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		SlctIdSolicitud & INT & Yes & Yes & No &  & \\ \hline 
+		CursIdCurso & INT & Yes & No & No &  & \\ \hline 
+		UserFKEstudiante & BIGINT & Yes & No & Yes &  & \\ \hline 
+		UserFKAdmin & BIGINT & Yes & No & Yes &  & \\ \hline 
+		SlctFechaSolicitud & DATETIME & Yes & No & No &  & \\ \hline 
+		SlctFechaRespuesta & DATETIME & No & No & No &  & \\ \hline 
+		SlctEstado & VARCHAR(45) & No & No & No &  & \\ \hline 
+		SlctComentario & TEXT & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableGrupoInvestigacion}
+	\label{labelTableGrupoInvestigacion}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		GrivIdGrupoInv & INT & Yes & Yes & No &  & \\ \hline 
+		GrivFechaCreacion & DATETIME & Yes & No & No &  & \\ \hline 
+		GrivNombre & VARCHAR(200) & Yes & No & No &  & \\ \hline 
+		GrivMision & TEXT & Yes & No & No &  & \\ \hline 
+		GrivVision & TEXT & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTablePrograma}
+	\label{labelTablePrograma}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		ProgIdPrograma & INT & Yes & Yes & No &  & \\ \hline 
+		ProgNombre & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ProgCodigo & VARCHAR(45) & No & No & No &  & \\ \hline 
+		FacuFKIdFacultad & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableProgramasSemillero}
+	\label{labelTableProgramasSemillero}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		ProgFKIdPrograma & INT & Yes & Yes & Yes &  & \\ \hline 
+		SmlrFKIdSemillero & INT & Yes & Yes & Yes &  & \\ \hline 
+		PgsmEstado & ENUM('T', 'F') & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableProgramasGruposInv}
+	\label{labelTableProgramasGruposInv}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		GrivFKIdGrupoInv & INT & Yes & Yes & Yes &  & \\ \hline 
+		ProgFKIdPrograma & INT & Yes & Yes & Yes &  & \\ \hline 
+		PggrEstado & ENUM('T', 'F') & Yes & No & No &  & \\ \hline 
+		PggrFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		PggrCartaAval & TEXT & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableProyectos}
+	\label{labelTableProyectos}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		ProyIdProyecto & INT & Yes & Yes & No &  & \\ \hline 
+		ProyNombre & TEXT & Yes & No & No &  & \\ \hline 
+		ProyDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		ProyTipo & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ProyEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		LinvFKIdLineaInv & INT & Yes & No & Yes &  & \\ \hline 
+		ConvFKIdConvocatoria & INT & Yes & No & Yes &  & \\ \hline 
+		GrivFKIdGrupoInv & INT & Yes & No & Yes &  & \\ \hline 
+		ProgFKIdPrograma & INT & Yes & No & Yes &  & \\ \hline 
+		ProyFormulacionProblema & TEXT & Yes & No & No &  & \\ \hline 
+		ProyJustificacion & TEXT & Yes & No & No &  & \\ \hline 
+		ProyMarcoTeorico & TEXT & Yes & No & No &  & \\ \hline 
+		ProyMetodologia & TEXT & Yes & No & No &  & \\ \hline 
+		ProyBibliografia & TEXT & Yes & No & No &  & \\ \hline 
+		ProyAnexos & TEXT & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableRolSemillero}
+	\label{labelTableRolSemillero}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		RsmlIdRolSemillero & INT & Yes & Yes & No &  & \\ \hline 
+		RsmlNombre & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		RsmlEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		SmlrFKIdSemillero & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableParEvaluador}
+	\label{labelTableParEvaluador}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		PaevIdParEvaluador & INT & Yes & Yes & No &  & \\ \hline 
+		PaevFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		PaevEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		PaevTipo & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		UserFKParEvaluador & VARCHAR(45) & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableActividadSemillero}
+	\label{labelTableActividadSemillero}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		ActsIdActividad & INT & Yes & Yes & No &  & \\ \hline 
+		ActsDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		ActsFechaCreacion & DATETIME & Yes & No & No &  & \\ \hline 
+		ActsEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ActsFechaInicio & DATE & Yes & No & No &  & \\ \hline 
+		ActsFechaFin & DATE & Yes & No & No &  & \\ \hline 
+		MetsFKIdMetaSemillero & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableConvocatoria}
+	\label{labelTableConvocatoria}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		ConvIdConvocatoria & INT & Yes & Yes & No &  & \\ \hline 
+		ConvNombre & TEXT & Yes & No & No &  & \\ \hline 
+		ConvDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		ConvObservaciones & TEXT & No & No & No &  & \\ \hline 
+		ConvFechaCreacion & DATETIME & Yes & No & No &  & \\ \hline 
+		ConvFechaInicio & DATE & Yes & No & No &  & \\ \hline 
+		ConvFechaFin & DATE & Yes & No & No &  & \\ \hline 
+		ConvEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		TconFKIdTipoConvocatoria & INT & Yes & No & Yes &  & \\ \hline 
+		ConvOferente & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		ConvDestinatario & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableBancopreliminar}
+	\label{labelTableBancopreliminar}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		BpreIdBancoPreliminar & INT & Yes & Yes & No &  & \\ \hline 
+		BpreDescripcion & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		BpreEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ConvFKIdConvocatoria & INT & Yes & No & Yes &  & \\ \hline 
+		BpreFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableProyectospreliminares}
+	\label{labelTableProyectospreliminares}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		PpreIdProyectoPreliminar & INT & Yes & Yes & No &  & \\ \hline 
+		ProyFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		BpreFKIdBancoPreliminar & INT & Yes & No & Yes &  & \\ \hline 
+		PpreEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		PpreFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableBancodefinitivo}
+	\label{labelTableBancodefinitivo}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		BdefIdBancoDefinitivo & INT & Yes & Yes & No &  & \\ \hline 
+		BdefEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		BdefFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		ConvFKIdConvocatoria & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableProyectosdefinitivos}
+	\label{labelTableProyectosdefinitivos}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		PdefIdProyectoDefinitivo & INT & Yes & Yes & No &  & \\ \hline 
+		PdefEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		PdefFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		BdefFKIdBancoDefinitivo & INT & Yes & No & Yes &  & \\ \hline 
+		ProyFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableEvaluacion}
+	\label{labelTableEvaluacion}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		EvlcIdEvaluacion & BIGINT & Yes & Yes & No &  & \\ \hline 
+		EvlcDescripcion & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		EvlcFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		EvlcEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		EvlcResultado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		AparFKIdAsignacion & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableTipoConvocatoria}
+	\label{labelTableTipoConvocatoria}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		TconIdTipoConvocatoria & INT & Yes & Yes & No &  & \\ \hline 
+		TconNombre & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		TconEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableLineaInvestigacion}
+	\label{labelTableLineaInvestigacion}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		LinvIdLineaInv & INT & Yes & Yes & No &  & \\ \hline 
+		LinvNombreLinea & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		LinvDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		ProgFKIdPrograma & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableFacultad}
+	\label{labelTableFacultad}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		FacuIdFacultad & INT & Yes & Yes & No &  & \\ \hline 
+		FacuNombre & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		FacuEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableEvaluadorInterno}
+	\label{labelTableEvaluadorInterno}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		EvaiIdEvaluadorInterno & INT & Yes & Yes & No &  & \\ \hline 
+		ProgFKIdPrograma & INT & Yes & No & Yes &  & \\ \hline 
+		PaevFKIdParEvaluador & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableAsignacionParEvaluacion}
+	\label{labelTableAsignacionParEvaluacion}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		AparIdAsignacion & INT & Yes & Yes & No &  & \\ \hline 
+		ProyFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		PaevFKIdParEvaluador & INT & Yes & No & Yes &  & \\ \hline 
+		AparEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		AparFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		UserFKAsignadoPor & VARCHAR(45) & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTablePreevaluacion}
+	\label{labelTablePreevaluacion}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		PrevIdPreevaluacion & INT & Yes & Yes & No &  & \\ \hline 
+		PrevDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		PrevFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		PrevEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		PrevResultado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		InstFKIdInstancia & INT & Yes & No & Yes &  & \\ \hline 
+		ProyFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		UserFKIdUsuario & VARCHAR(45) & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableInstancia}
+	\label{labelTableInstancia}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		InstIdInstancia & INT & Yes & Yes & No &  & \\ \hline 
+		InstNombre & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		InstDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		InstEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableIntegrantesGrupo}
+	\label{labelTableIntegrantesGrupo}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		IgruIdIntegrante & INT & Yes & Yes & No &  & \\ \hline 
+		UserFKIdUsuario & VARCHAR(45) & Yes & No & Yes &  & \\ \hline 
+		GrivFKIdGrupoInv & INT & Yes & No & Yes &  & \\ \hline 
+		IgruEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		IgruFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableProyectosSemilleros}
+	\label{labelTableProyectosSemilleros}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		PrsmIdProyecto & INT & Yes & Yes & No &  & \\ \hline 
+		PrsmFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		PrsmEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ProyFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		SmlrFKIdSemillero & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableProyectosGrupos}
+	\label{labelTableProyectosGrupos}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		PrgrIdProyecto & INT & Yes & Yes & No &  & \\ \hline 
+		PrgrFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		PrgrEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ProyFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		GrivFKIdGrupoInv & INT & Yes & No & Yes &  & \\ \hline 
+		PrgrLugarEjecucion & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		MpioFKIdMpio & INT & Yes & No & Yes &  & \\ \hline 
+		PrgrDuracion & DOUBLE & Yes & No & No &  & \\ \hline 
+		TinvFKIdTipo & INT & Yes & No & Yes &  & \\ \hline 
+		PrgrValorTotal & BIGINT & Yes & No & No &  & \\ \hline 
+		PrgrValorSolicitado & BIGINT & Yes & No & No &  & \\ \hline 
+		PrgrValorContrapartida & BIGINT & Yes & No & No &  & \\ \hline 
+		PrgrTotalInvestigadores & INT & Yes & No & No &  & \\ \hline 
+		PrgrTipo & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		PrgrResultadosEsperados & TEXT & Yes & No & No &  & \\ \hline 
+		PrgrEstraComunicacion & TEXT & Yes & No & No &  & \\ \hline 
+		PrgrPalabrasClave & TEXT & Yes & No & No &  & \\ \hline 
+		& VARCHAR(45) & No & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableRolesIntegrantesSemillero}
+	\label{labelTableRolesIntegrantesSemillero}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		RismIdRol & INT & Yes & Yes & No &  & \\ \hline 
+		RismFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		RismEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		IsmlFKIdIntegrante & INT & Yes & No & Yes &  & \\ \hline 
+		RsmlFKIdRolSemillero & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableRolGrupo}
+	\label{labelTableRolGrupo}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		RgruIdRolGrupo & INT & Yes & Yes & No &  & \\ \hline 
+		RgruNombre & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		RgruEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		GrivFKIdGrupoInv & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableRolesIntegrantesGrupo}
+	\label{labelTableRolesIntegrantesGrupo}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		RigrIdRol & INT & Yes & Yes & No &  & \\ \hline 
+		RigrFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		RigrEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		IgruFKIdIntegrante & INT & Yes & No & Yes &  & \\ \hline 
+		RgruFKIdRolGrupo & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableObjetivosProyectoSemillero}
+	\label{labelTableObjetivosProyectoSemillero}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		ObpsIdObjetivo & INT & Yes & Yes & No &  & \\ \hline 
+		ObpsID & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ObpsDescripcion & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ObpsFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		ObpsEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		ObpsTipo & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		PrsmFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableInformeParcial}
+	\label{labelTableInformeParcial}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		InpaIdInformeParcial & INT & Yes & Yes & No &  & \\ \hline 
+		InpaDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		InpaFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		InpaEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		InpaMetodologia & TEXT & Yes & No & No &  & \\ \hline 
+		InpaResultados & TEXT & Yes & No & No &  & \\ \hline 
+		InpaImpacto & TEXT & Yes & No & No &  & \\ \hline 
+		InpaEstraDivulgacion & TEXT & Yes & No & No &  & \\ \hline 
+		ProyFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		InpaDocSoporte & TEXT & Yes & No & No &  & \\ \hline 
+		InpaPresupuesto & TEXT & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableIntegrantesProyectoSemillero}
+	\label{labelTableIntegrantesProyectoSemillero}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		IprsIdIntegrante & INT & Yes & Yes & No &  & \\ \hline 
+		IprsFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		IprsEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		RolpFKIdRolProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		IsmlFKIdIntegrante & INT & Yes & No & Yes &  & \\ \hline 
+		PrsmFKIdProyecto & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableRolProyecto}
+	\label{labelTableRolProyecto}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		RolpIdRolProyecto & INT & Yes & Yes & No &  & \\ \hline 
+		RolpNombre & VARCHAR(100) & Yes & No & No &  & \\ \hline 
+		RolpEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableInformeFinal}
+	\label{labelTableInformeFinal}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		InfiIdInformeFinal & INT & Yes & Yes & No &  & \\ \hline 
+		InfiProblemaPlanteado & TEXT & Yes & No & No &  & \\ \hline 
+		InfiHipotesis & TEXT & Yes & No & No &  & \\ \hline 
+		InfiAvanceObtenido & TEXT & Yes & No & No &  & \\ \hline 
+		InfiRetosPlanteados & TEXT & Yes & No & No &  & \\ \hline 
+		InfiGradoComprobacion & TEXT & Yes & No & No &  & \\ \hline 
+		InfiGestionProyecto & TEXT & Yes & No & No &  & \\ \hline 
+		InfiObservaciones & TEXT & Yes & No & No &  & \\ \hline 
+		InfiRecomendaciones & TEXT & Yes & No & No &  & \\ \hline 
+		InfiActores & TEXT & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableInformeFinal}
+	\label{labelTableInformeFinal}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		InfiIdInformeFinal & INT & Yes & Yes & No &  & \\ \hline 
+		InfiProblemaPlanteado & TEXT & Yes & No & No &  & \\ \hline 
+		InfiHipotesis & TEXT & Yes & No & No &  & \\ \hline 
+		InfiAvanceObtenido & TEXT & Yes & No & No &  & \\ \hline 
+		InfiRetosPlanteados & TEXT & Yes & No & No &  & \\ \hline 
+		InfiGradoComprobacion & TEXT & Yes & No & No &  & \\ \hline 
+		InfiGestionProyecto & TEXT & Yes & No & No &  & \\ \hline 
+		InfiObservaciones & TEXT & Yes & No & No &  & \\ \hline 
+		InfiRecomendaciones & TEXT & Yes & No & No &  & \\ \hline 
+		InfiActores & TEXT & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableCronogramaConvocatoria}
+	\label{labelTableCronogramaConvocatoria}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		CrcvIdCronograma & INT & Yes & Yes & No &  & \\ \hline 
+		CrcvDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		CrcvFechaCreacion & DATETIME & Yes & No & No &  & \\ \hline 
+		CrcvFechaActividad & DATETIME & Yes & No & No &  & \\ \hline 
+		CrcvEstado & VARCHAR(45) & No & No & No &  & \\ \hline 
+		ConvFKIdConvocatoria & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+
+\begin{table}
+	\caption{tableTableSoportesCronograma}
+	\label{labelTableSoportesCronograma}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		SocrIdSoporte & INT & Yes & Yes & No &  & \\ \hline 
+		SocrDescripcion & TEXT & Yes & No & No &  & \\ \hline 
+		SocrRutaAdjunto & VARCHAR(200) & Yes & No & No &  & \\ \hline 
+		SocrEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		SocrFecha & DATETIME & Yes & No & No &  & \\ \hline 
+		CrcvFKIdCronograma & INT & Yes & No & Yes &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}
+	\caption{tableTableProduccionGrupo}
+	\label{labelTableProduccionGrupo}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		PgruIdProduccion & INT & Yes & Yes & No &  & \\ \hline 
+		Pgru & VARCHAR(45) & No & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
+
+\begin{table}[h]
+	\caption{tableTableUnidadesAcademicas}
+	\label{labelTableUnidadesAcademicas}
+	\begin{tabular}{ |l|l|l|l|l|l|l| }
+		\hline
+		Name & DataType & Nullable & PK & FK & Default & Comment \\ \hline
+		UnacIdUnidad & INT & Yes & Yes & No &  & \\ \hline 
+		UnacNombre & VARCHAR(200) & Yes & No & No &  & \\ \hline 
+		UnacEstado & VARCHAR(45) & Yes & No & No &  & \\ \hline 
+		UnacFechaCreacion & DATETIME & Yes & No & No &  & \\ \hline 
+		
+	\end{tabular}
+\end{table}
