@@ -1,770 +1,780 @@
 \chapter{Base de datos}
 
-Diccionario de datos 
+\section{Infraestructura}
+
+El sistema actualmente está basado en una de las tecnologías mas reconocidas de la multinacional Oracle, esta herramienta está diseñada para la gestión de bases de datos, permitiendo así administrar grandes cantidades de información de manera extremadamente segura y rápida.
+\\
+
+La distribución interna ha sido diseñada para incrementar aspectos importantes en cuanto a desarrollo e implementación, así mismo, la organización interna tiende a mantener un orden mediante distribución de elementos según sea su funcionalidad, p.ej: Procedimientos almacenados, disparadores, secuencias, tablas, vistas, funciones, entre otros.
+
+
+\section{Diccionario de datos}
+
+A continuación, se muestran las tablas usadas en el diseño del sistema de información SIGEPI.
 
 \begin{table}[ht]
-	\caption{Tabla Usuario}
+	\caption{Tabla de diccionario - Usuario}
 	\label{labelTableUsuario}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|X|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		UserIdUsuario & Cadena & Si & Si & No & \\ \hline
-		RolFKIdRol & Entero & Si & No & Si & \\ \hline
-		UserNombreUsuario & Cadena & Si & No & No & \\ \hline
-		UserCorreo & Cadena & Si & No & No & \\ \hline
-		UserNombres & Cadena & Si & No & No & \\ \hline
-		UserApellidos & Cadena & Si & No & No & \\ \hline
-	\end{tabular}
+		\textbf{Nombre}	& \textbf{Tipo de dato} & \textbf{Permite Null} & \textbf{Primaria} & \textbf{For\'anea} & \textbf{Comentario} \\ \hline
+		User Id Usuario & Cadena & Si & Si & No & Clave primaria \\ \hline
+		Rol FK Id Rol	& Entero & Si & No & Si & Rol \\ \hline
+		User Nombre Usuario & Cadena & Si & No & No & Nombre de usuario \\ \hline
+		User Correo		& Cadena & Si & No & No & Correo electrónico universidad \\ \hline
+		User Nombres	& Cadena & Si & No & No & Nombres	\\ \hline
+		User Apellidos	& Cadena & Si & No & No & Apellidos	\\ \hline
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Semillero}
+	\caption{Tabla de diccionario - Semillero}
 	\label{labelTableSemillero}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		SmlrIdSemillero & Entero & Si & Si & No & \\ \hline 
-		SmlrNombre & Cadena & Si & No & No & \\ \hline 
-		SmlrDescripcion & Texto largo & Si & No & No & \\ \hline 
-		SmlrRutaLogo & Texto largo & Si & No & No & \\ \hline 
-		SmlrMision & Texto largo & Si & No & No & \\ \hline 
-		SmlrVision & Texto largo & Si & No & No & \\ \hline 
-		SmlrRuta & Cadena & Si & No & No & \\ \hline 
-		SmlrSigla & Cadena & Si & No & No & \\ \hline 
-		SmlrJustificacion & Texto largo & Si & No & No & \\ \hline 
-		SmlrMetodologiaTrabajo & Texto largo & Si & No & No & \\ \hline 
-		SmlrAreasTrabajo & Texto largo & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre				& Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Smlr Id Semillero	& Entero & Si & Si & No & Id semillero \\ \hline 
+		Smlr Nombre			& Cadena & Si & No & No & Nombre semillero \\ \hline 
+		Smlr Descripcion 	& Texto largo & Si & No & No & Descripción \\ \hline 
+		Smlr Ruta Logo 		& Texto largo & Si & No & No & URL Logo \\ \hline 
+		Smlr Mision 		& Texto largo & Si & No & No & Misión \\ \hline 
+		Smlr Vision 		& Texto largo & Si & No & No & Visión \\ \hline 
+		Smlr Ruta 			& Cadena & Si & No & No & Ruta de semillero \\ \hline 
+		Smlr Sigla 			& Cadena & Si & No & No & Siglas \\ \hline 
+		Smlr Justificacion 	& Texto largo & Si & No & No & Justificación \\ \hline 
+		Smlr Metodologia Trabajo & Texto largo & Si & No & No & Metodología \\ \hline 
+		Smlr Areas Trabajo 	& Texto largo & Si & No & No & Áreas de trabajos \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Integrantes Semillero}
+	\caption{Tabla de diccionario - Integrantes Semillero}
 	\label{labelTableIntegrantesSemillero}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		IsmlIdIntegrante & Entero & Si & Si & No & \\ \hline 
-		UserFKIdUsuario & Entero & Si & No & Si & \\ \hline 
-		SmlrFKIdSemillero & Entero & Si & No & Si & \\ \hline 
-		IsmlFecha & Fecha & Si & No & No & \\ \hline 
-		IsmlEstado & Cadena & Si & No & No & \\ \hline	
-	\end{tabular}
+		Nombre 				& Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Isml Id Integrante	& Entero & Si & Si & No & Id integrante \\ \hline 
+		User FK Id Usuario	& Entero & Si & No & Si & Id Usurario \\ \hline 
+		Smlr FK Id Semillero& Entero & Si & No & Si & Id semillero \\ \hline 
+		Isml Fecha			& Fecha  & Si & No & No & Fecha de registro \\ \hline 
+		Isml Estado			& Cadena & Si & No & No & \\ \hline	
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Rol}
+	\caption{Tabla de diccionario - Rol}
 	\label{labelTableRol}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		RolIdRol & Entero & Si & Si & No & \\ \hline 
-		RolNombreRol & Cadena & Si & No & No & \\ \hline	
-	\end{tabular}
+		Nombre			& Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Rol Id Rol		& Entero & Si & Si & No & \\ \hline 
+		Rol Nombre Rol	& Cadena & Si & No & No & Nombre de rol \\ \hline	
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Permisos}
+	\caption{Tabla de diccionario - Permisos}
 	\label{labelTablePermisos}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		PrmsIdPermiso & Entero & Si & Si & No & \\ \hline 
-		PrmsNombrePermiso & Cadena & Si & No & No & \\ \hline 
-		PrmsIcono & Cadena & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre				& Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Prms Id Permiso		& Entero & Si & Si & No &  \\ \hline 
+		Prms Nombre Permiso & Cadena & Si & No & No & Nombre asignado al permiso \\ \hline 
+		Prms Icono			& Cadena & Si & No & No & Referencia icono tipo CSS3 Boostrap \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Subpermisos}
+	\caption{Tabla de diccionario - Subpermisos}
 	\label{labelTableSubpermisos}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		SpmsIdSubpermiso & Entero & Si & Si & No & \\ \hline 
-		SpmsNombreSubpermiso & Cadena & Si & No & No & \\ \hline 
-		SpmsURL & Cadena & Si & No & No & \\ \hline 
-		PrmsFKIdPermiso & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre 					& Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Spms Id Subpermiso		& Entero & Si & Si & No & \\ \hline 
+		Spms Nombre Subpermiso	& Cadena & Si & No & No & \\ \hline 
+		Spms URL				& Cadena & Si & No & No & URL asignado \\ \hline 
+		Prms FK Id Permiso		& Entero & Si & No & Si & Relación a permiso \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Men\'u Usuario}
+	\caption{Tabla de diccionario - Men\'u Usuario}
 	\label{labelTableMenuUsuario}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		RolFKIdRol & Entero & Si & Si & Si & \\ \hline 
-		SpmsFKIdSubpermiso & Entero & Si & Si & Si & \\ \hline 
-		MusrEstado & Cadena & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre					& Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		RolFK Id Rol			& Entero & Si & Si & Si & \\ \hline 
+		Spms FK Id Subpermiso	& Entero & Si & Si & Si & Relación a subpermiso \\ \hline 
+		Musr Estado				& Cadena & Si & No & No & Activo - Desactivado \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Repositorio}
+	\caption{Tabla de diccionario - Repositorio}
 	\label{labelTableRepositorio}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		RepoIdRepositorio & Entero & Si & Si & No & \\ \hline 
-		RepoNombre & Cadena & Si & No & No & \\ \hline 
-		RepoDescripcion & Texto largo & Si & No & No & \\ \hline 
-		RepoRuta & Texto largo & Si & No & No & \\ \hline 
-		RepoEstado & Cadena & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Repo Id Repositorio & Entero & Si & Si & No & \\ \hline 
+		Repo Nombre & Cadena & Si & No & No & Nombre de repositorio \\ \hline 
+		Repo Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Repo Ruta & Texto largo & Si & No & No & Ruta del repositorio \\ \hline 
+		Repo Estado & Cadena & Si & No & No & Activo - Desactivado \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Documento}
+	\caption{Tabla de diccionario - Documento}
 	\label{labelTableDocumento}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		DocuIdDocumento & Entero & Si & Si & No & \\ \hline 
-		DocuNombre & Cadena & Si & No & No & \\ \hline 
-		DocuRuta & Texto largo & Si & No & No & \\ \hline 
-		DocuFecha & Fecha & Si & No & No & \\ \hline 
-		DocuEstado & Cadena & No & No & No & \\ \hline 
-		UserFKIdUsuario & BI Entero & Si & No & Si & \\ \hline 
-		RepoFKIdRepositorio & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		DocuId Documento & Entero & Si & Si & No & \\ \hline 
+		Docu Nombre & Cadena & Si & No & No & Nombre del documento \\ \hline 
+		Docu Ruta & Texto largo & Si & No & No & Ruta del documento \\ \hline 
+		Docu Fecha & Fecha & Si & No & No & Registro \\ \hline 
+		Docu Estado & Cadena & No & No & No & \\ \hline 
+		User FK Id Usuario & Entero & Si & No & Si & Relación a usuario/ \\ \hline 
+		Repo FK Id Repositorio & Entero & Si & No & Si & Relación a repositorio / referencia contenedor de documentos \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Correos Enviados}
+	\caption{Tabla de diccionario - Correos Enviados}
 	\label{labelTableCorreosEnviados}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		CrnvIdCorreoEnviado & Entero & Si & Si & No & \\ \hline 
-		CrnvTipo & Cadena & Si & No & No & \\ \hline 
-		CrnvDescripcion & Texto largo & Si & No & No & \\ \hline 
-		CrnvEstadoEnvio & VARCHAR(50) & Si & No & No & \\ \hline 
-		CrnvFechaEnvio & Fecha & Si & No & No & \\ \hline 
-		SmlrFKIdSemillero & Entero & Si & No & Si & \\ \hline 
-		UserFKDestinatario & Cadena & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Crnv Id Correo Enviado & Entero & Si & Si & No & \\ \hline 
+		Crnv Tipo & Cadena & Si & No & No & Tipo de correo \\ \hline 
+		Crnv Descripcion & Texto largo & Si & No & No & Descripción del correo \\ \hline 
+		Crnv Estado Envio & Texto & Si & No & No & Activo - Desactivado \\ \hline 
+		Crnv Fecha Envio & Fecha & Si & No & No & Fecha en que se envió el correo \\ \hline 
+		Smlr FK Id Semillero & Entero & Si & No & Si & Relación a semillero / Semillero asignado \\ \hline 
+		User FK Destinatario & Cadena & Si & No & Si & Usuario destinatario \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Acceso Sistema}
+	\caption{Tabla de diccionario - Acceso Sistema}
 	\label{labelTableAccesoSistema}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		AstmIdAcceso & BI Entero & Si & Si & No & \\ \hline 
-		AstmFecha & Fecha & Si & No & No & \\ \hline 
-		AstmIP & Cadena & Si & No & No & \\ \hline 
-		UserFKIdUsuario & BI Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Astm Id Acceso & BI Entero & Si & Si & No & \\ \hline 
+		Astm Fecha & Fecha & Si & No & No & Fecha de registro / ultimo acceso \\ \hline 
+		Astm IP & Cadena & Si & No & No & Dirección IP del cliente \\ \hline 
+		User FK Id Usuario & BI Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Solicitudes}
+	\caption{Tabla de diccionario - Solicitudes}
 	\label{labelTableSolicitudes}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		SlctIdSolicitud & Entero & Si & Si & No & \\ \hline 
-		CursIdCurso & Entero & Si & No & No & \\ \hline 
-		UserFKEstudiante & BI Entero & Si & No & Si & \\ \hline 
-		UserFKAdmin & BI Entero & Si & No & Si & \\ \hline 
-		SlctFechaSolicitud & Fecha & Si & No & No & \\ \hline 
-		SlctFechaRespuesta & Fecha & No & No & No & \\ \hline 
-		SlctEstado & Cadena & No & No & No & \\ \hline 
-		SlctComentario & Texto largo & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Slct Id Solicitud & Entero & Si & Si & No & \\ \hline 
+		Curs Id Curso & Entero & Si & No & No & \\ \hline 
+		User FK Estudiante & BI Entero & Si & No & Si & Estudiante asignado \\ \hline 
+		User FK Admin & Entero & Si & No & Si & \\ \hline 
+		Slct Fecha Solicitud & Fecha & Si & No & No & \\ \hline 
+		Slct Fecha Respuesta & Fecha & No & No & No & \\ \hline 
+		Slct Estado & Cadena & No & No & No & Activo - Desactivado \\ \hline 
+		Slct Comentario & Texto largo & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Grupo Investigaci\'on}
+	\caption{Tabla de diccionario - Grupo Investigaci\'on}
 	\label{labelTableGrupoInvestigacion}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		GrivIdGrupoInv & Entero & Si & Si & No & \\ \hline 
-		GrivFechaCreacion & Fecha & Si & No & No & \\ \hline 
-		GrivNombre & Cadena & Si & No & No & \\ \hline 
-		GrivMision & Texto largo & Si & No & No & \\ \hline 
-		GrivVision & Texto largo & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Griv Id GrupoInv & Entero & Si & Si & No & \\ \hline 
+		Griv Fecha Creacion & Fecha & Si & No & No & \\ \hline 
+		Griv Nombre & Cadena & Si & No & No & Nombre del grupo de investigación \\ \hline 
+		Griv Mision & Texto largo & Si & No & No & \\ \hline 
+		Griv Vision & Texto largo & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Programa}
+	\caption{Tabla de diccionario - Programa}
 	\label{labelTablePrograma}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		ProgIdPrograma & Entero & Si & Si & No & \\ \hline 
-		ProgNombre & Cadena & Si & No & No & \\ \hline 
-		ProgCodigo & Cadena & No & No & No & \\ \hline 
-		FacuFKIdFacultad & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Prog Id Programa & Entero & Si & Si & No & \\ \hline 
+		Prog Nombre & Cadena & Si & No & No & Nombre del programa \\ \hline 
+		Prog Codigo & Cadena & No & No & No & Código del programa \\ \hline 
+		Facu FK Id Facultad & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Programas Semillero}
+	\caption{Tabla de diccionario - Programas Semillero}
 	\label{labelTableProgramasSemillero}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		ProgFKIdPrograma & Entero & Si & Si & Si & \\ \hline 
-		SmlrFKIdSemillero & Entero & Si & Si & Si & \\ \hline 
-		PgsmEstado & ENUM('T', 'F') & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Prog FK Id Programa & Entero & Si & Si & Si & \\ \hline 
+		Smlr FK Id Semillero & Entero & Si & Si & Si & Semillero relacionado al programa \\ \hline 
+		Pgsm Estado & Enumerable & Si & No & No & Activo - Desactivado \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Programas Grupos Inv}
+	\caption{Tabla de diccionario - Programas Grupos Inv}
 	\label{labelTableProgramasGruposInv}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		GrivFKIdGrupoInv & Entero & Si & Si & Si & \\ \hline 
-		ProgFKIdPrograma & Entero & Si & Si & Si & \\ \hline 
-		PggrEstado & ENUM('T', 'F') & Si & No & No & \\ \hline 
-		PggrFecha & Fecha & Si & No & No & \\ \hline 
-		PggrCartaAval & Texto largo & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Griv FKIdGrupoInv & Entero & Si & Si & Si & \\ \hline 
+		Prog FKIdPrograma & Entero & Si & Si & Si & \\ \hline 
+		Pggr Estado & ENUM('T', 'F') & Si & No & No & \\ \hline 
+		Pggr Fecha & Fecha & Si & No & No & \\ \hline 
+		Pggr CartaAval & Texto largo & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Proyectos}
+	\caption{Tabla de diccionario - Proyectos}
 	\label{labelTableProyectos}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		ProyIdProyecto & Entero & Si & Si & No & \\ \hline 
-		ProyNombre & Texto largo & Si & No & No & \\ \hline 
-		ProyDescripcion & Texto largo & Si & No & No & \\ \hline 
-		ProyTipo & Cadena & Si & No & No & \\ \hline 
-		ProSitado & Cadena & Si & No & No & \\ \hline 
-		LinvFKIdLineaInv & Entero & Si & No & Si & \\ \hline 
-		ConvFKIdConvocatoria & Entero & Si & No & Si & \\ \hline 
-		GrivFKIdGrupoInv & Entero & Si & No & Si & \\ \hline 
-		ProgFKIdPrograma & Entero & Si & No & Si & \\ \hline 
-		ProyFormulacionProblema & Texto largo & Si & No & No & \\ \hline 
-		ProyJustificacion & Texto largo & Si & No & No & \\ \hline 
-		ProyMarcoTeorico & Texto largo & Si & No & No & \\ \hline 
-		ProyMetodologia & Texto largo & Si & No & No & \\ \hline 
-		ProyBibliografia & Texto largo & Si & No & No & \\ \hline 
-		ProyAnexos & Texto largo & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Proy IdProyecto & Entero & Si & Si & No & \\ \hline 
+		Proy Nombre & Texto largo & Si & No & No & \\ \hline 
+		Proy Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Proy Tipo & Cadena & Si & No & No & \\ \hline 
+		Pro Sitado & Cadena & Si & No & No & \\ \hline 
+		Linv FKIdLineaInv & Entero & Si & No & Si & \\ \hline 
+		Conv FKIdConvocatoria & Entero & Si & No & Si & \\ \hline 
+		Griv FKIdGrupoInv & Entero & Si & No & Si & \\ \hline 
+		Prog FKIdPrograma & Entero & Si & No & Si & \\ \hline 
+		Proy FormulacionProblema & Texto largo & Si & No & No & \\ \hline 
+		Proy Justificacion & Texto largo & Si & No & No & \\ \hline 
+		Proy MarcoTeorico & Texto largo & Si & No & No & \\ \hline 
+		Proy Metodologia & Texto largo & Si & No & No & \\ \hline 
+		Proy Bibliografia & Texto largo & Si & No & No & \\ \hline 
+		Proy Anexos & Texto largo & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Rol Semillero}
+	\caption{Tabla de diccionario - Rol Semillero}
 	\label{labelTableRolSemillero}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		RsmlIdRolSemillero & Entero & Si & Si & No & \\ \hline 
-		RsmlNombre & Cadena & Si & No & No & \\ \hline 
-		RsmlEstado & Cadena & Si & No & No & \\ \hline 
-		SmlrFKIdSemillero & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Rsml IdRolSemillero & Entero & Si & Si & No & \\ \hline 
+		Rsml Nombre & Cadena & Si & No & No & \\ \hline 
+		Rsml Estado & Cadena & Si & No & No & \\ \hline 
+		Smlr FKIdSemillero & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Par Evaluador}
+	\caption{Tabla de diccionario - Par Evaluador}
 	\label{labelTableParEvaluador}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		PaevIdParEvaluador & Entero & Si & Si & No & \\ \hline 
-		PaevFecha & Fecha & Si & No & No & \\ \hline 
-		PaevEstado & Cadena & Si & No & No & \\ \hline 
-		PaevTipo & Cadena & Si & No & No & \\ \hline 
-		UserFKParEvaluador & Cadena & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Paev IdParEvaluador & Entero & Si & Si & No & \\ \hline 
+		Paev Fecha & Fecha & Si & No & No & \\ \hline 
+		Paev Estado & Cadena & Si & No & No & \\ \hline 
+		Paev Tipo & Cadena & Si & No & No & \\ \hline 
+		User FKParEvaluador & Cadena & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Actividad Semillero}
+	\caption{Tabla de diccionario - Actividad Semillero}
 	\label{labelTableActividadSemillero}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		ActsIdActividad & Entero & Si & Si & No & \\ \hline 
-		ActsDescripcion & Texto largo & Si & No & No & \\ \hline 
-		ActsFechaCreacion & Fecha & Si & No & No & \\ \hline 
-		ActsEstado & Cadena & Si & No & No & \\ \hline 
-		ActsFechaInicio & DATE & Si & No & No & \\ \hline 
-		ActsFechaFin & DATE & Si & No & No & \\ \hline 
-		MetsFKIdMetaSemillero & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Acts IdActividad & Entero & Si & Si & No & \\ \hline 
+		Acts Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Acts FechaCreacion & Fecha & Si & No & No & \\ \hline 
+		Acts Estado & Cadena & Si & No & No & \\ \hline 
+		Acts FechaInicio & DATE & Si & No & No & \\ \hline 
+		Acts FechaFin & DATE & Si & No & No & \\ \hline 
+		Mets FKIdMetaSemillero & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Convocatoria}
+	\caption{Tabla de diccionario - Convocatoria}
 	\label{labelTableConvocatoria}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		ConvIdConvocatoria & Entero & Si & Si & No & \\ \hline 
-		ConvNombre & Texto largo & Si & No & No & \\ \hline 
-		ConvDescripcion & Texto largo & Si & No & No & \\ \hline 
-		ConvObservaciones & Texto largo & No & No & No & \\ \hline 
-		ConvFechaCreacion & Fecha & Si & No & No & \\ \hline 
-		ConvFechaInicio & DATE & Si & No & No & \\ \hline 
-		ConvFechaFin & DATE & Si & No & No & \\ \hline 
-		ConvEstado & Cadena & Si & No & No & \\ \hline 
-		TconFKIdTipoConvocatoria & Entero & Si & No & Si & \\ \hline 
-		ConvOferente & Cadena & Si & No & No & \\ \hline 
-		ConvDestinatario & Cadena & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Conv IdConvocatoria & Entero & Si & Si & No & \\ \hline 
+		Conv Nombre & Texto largo & Si & No & No & \\ \hline 
+		Conv Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Conv Observaciones & Texto largo & No & No & No & \\ \hline 
+		Conv FechaCreacion & Fecha & Si & No & No & \\ \hline 
+		Conv FechaInicio & DATE & Si & No & No & \\ \hline 
+		Conv FechaFin & DATE & Si & No & No & \\ \hline 
+		Conv Estado & Cadena & Si & No & No & \\ \hline 
+		Tcon FKIdTipoConvocatoria & Entero & Si & No & Si & \\ \hline 
+		Conv Oferente & Cadena & Si & No & No & \\ \hline 
+		Conv Destinatario & Cadena & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Banco Preliminar}
+	\caption{Tabla de diccionario - Banco Preliminar}
 	\label{labelTableBancopreliminar}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		BpreIdBancoPreliminar & Entero & Si & Si & No & \\ \hline 
-		BpreDescripcion & Cadena & Si & No & No & \\ \hline 
-		BpreEstado & Cadena & Si & No & No & \\ \hline 
-		ConvFKIdConvocatoria & Entero & Si & No & Si & \\ \hline 
-		BpreFecha & Fecha & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Bpre IdBancoPreliminar & Entero & Si & Si & No & \\ \hline 
+		Bpre Descripcion & Cadena & Si & No & No & \\ \hline 
+		Bpre Estado & Cadena & Si & No & No & \\ \hline 
+		Conv FKIdConvocatoria & Entero & Si & No & Si & \\ \hline 
+		Bpre Fecha & Fecha & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Proyectos preliminares}
+	\caption{Tabla de diccionario - Proyectos preliminares}
 	\label{labelTableProyectospreliminares}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		PpreIdProyectoPreliminar & Entero & Si & Si & No & \\ \hline 
-		ProyFKIdProyecto & Entero & Si & No & Si & \\ \hline 
-		BpreFKIdBancoPreliminar & Entero & Si & No & Si & \\ \hline 
-		PpreEstado & Cadena & Si & No & No & \\ \hline 
-		PpreFecha & Fecha & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Ppre IdProyectoPreliminar & Entero & Si & Si & No & \\ \hline 
+		Proy FKIdProyecto & Entero & Si & No & Si & \\ \hline 
+		Bpre FKIdBancoPreliminar & Entero & Si & No & Si & \\ \hline 
+		Ppre Estado & Cadena & Si & No & No & \\ \hline 
+		Ppre Fecha & Fecha & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Banco definitivo}
+	\caption{Tabla de diccionario - Banco definitivo}
 	\label{labelTableBancodefinitivo}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		BdefIdBancoDefinitivo & Entero & Si & Si & No & \\ \hline 
-		BdefEstado & Cadena & Si & No & No & \\ \hline 
-		BdefFecha & Fecha & Si & No & No & \\ \hline 
-		ConvFKIdConvocatoria & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Bdef IdBancoDefinitivo & Entero & Si & Si & No & \\ \hline 
+		Bdef Estado & Cadena & Si & No & No & \\ \hline 
+		Bdef Fecha & Fecha & Si & No & No & \\ \hline 
+		Conv FKIdConvocatoria & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Proyectos definitivos}
+	\caption{Tabla de diccionario - Proyectos definitivos}
 	\label{labelTableProyectosdefinitivos}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		PdefIdProyectoDefinitivo & Entero & Si & Si & No & \\ \hline 
-		PdefEstado & Cadena & Si & No & No & \\ \hline 
-		PdefFecha & Fecha & Si & No & No & \\ \hline 
-		BdefFKIdBancoDefinitivo & Entero & Si & No & Si & \\ \hline 
-		ProyFKIdProyecto & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Pdef IdProyectoDefinitivo & Entero & Si & Si & No & \\ \hline 
+		Pdef Estado & Cadena & Si & No & No & \\ \hline 
+		Pdef Fecha & Fecha & Si & No & No & \\ \hline 
+		Bdef FKIdBancoDefinitivo & Entero & Si & No & Si & \\ \hline 
+		Proy FKIdProyecto & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Evaluaci\'on}
+	\caption{Tabla de diccionario - Evaluaci\'on}
 	\label{labelTableEvaluacion}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		EvlcIdEvaluacion & BI Entero & Si & Si & No & \\ \hline 
-		EvlcDescripcion & Cadena & Si & No & No & \\ \hline 
-		EvlcFecha & Fecha & Si & No & No & \\ \hline 
-		EvlcEstado & Cadena & Si & No & No & \\ \hline 
-		EvlcResultado & Cadena & Si & No & No & \\ \hline 
-		AparFKIdAsignacion & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Evlc IdEvaluacion & BI Entero & Si & Si & No & \\ \hline 
+		Evlc Descripcion & Cadena & Si & No & No & \\ \hline 
+		Evlc Fecha & Fecha & Si & No & No & \\ \hline 
+		Evlc Estado & Cadena & Si & No & No & \\ \hline 
+		Evlc Resultado & Cadena & Si & No & No & \\ \hline 
+		Apar FKIdAsignacion & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Tipo Convocatoria}
+	\caption{Tabla de diccionario - Tipo Convocatoria}
 	\label{labelTableTipoConvocatoria}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		TconIdTipoConvocatoria & Entero & Si & Si & No & \\ \hline 
-		TconNombre & Cadena & Si & No & No & \\ \hline 
-		TconEstado & Cadena & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Tcon IdTipoConvocatoria & Entero & Si & Si & No & \\ \hline 
+		Tcon Nombre & Cadena & Si & No & No & \\ \hline 
+		Tcon Estado & Cadena & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Linea Investigaci\'on}
+	\caption{Tabla de diccionario - Linea Investigaci\'on}
 	\label{labelTableLineaInvestigacion}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		LinvIdLineaInv & Entero & Si & Si & No & \\ \hline 
-		LinvNombreLinea & Cadena & Si & No & No & \\ \hline 
-		LinvDescripcion & Texto largo & Si & No & No & \\ \hline 
-		ProgFKIdPrograma & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Linv IdLineaInv & Entero & Si & Si & No & \\ \hline 
+		Linv NombreLinea & Cadena & Si & No & No & \\ \hline 
+		Linv Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Prog FKIdPrograma & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Facultad}
+	\caption{Tabla de diccionario - Facultad}
 	\label{labelTableFacultad}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		FacuIdFacultad & Entero & Si & Si & No & \\ \hline 
-		FacuNombre & Cadena & Si & No & No & \\ \hline 
-		FacuEstado & Cadena & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Facu IdFacultad & Entero & Si & Si & No & \\ \hline 
+		Facu Nombre & Cadena & Si & No & No & \\ \hline 
+		Facu Estado & Cadena & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Evaluador Interno}
+	\caption{Tabla de diccionario - Evaluador Interno}
 	\label{labelTableEvaluadorInterno}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		EvaiIdEvaluadorInterno & Entero & Si & Si & No & \\ \hline 
-		ProgFKIdPrograma & Entero & Si & No & Si & \\ \hline 
-		PaevFKIdParEvaluador & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Evai IdEvaluadorInterno & Entero & Si & Si & No & \\ \hline 
+		Prog FKIdPrograma & Entero & Si & No & Si & \\ \hline 
+		Paev FKIdParEvaluador & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Asignaci\'on Par Evaluaci\'on}
+	\caption{Tabla de diccionario - Asignaci\'on Par Evaluaci\'on}
 	\label{labelTableAsignacionParEvaluacion}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		AparIdAsignacion & Entero & Si & Si & No & \\ \hline 
-		ProyFKIdProyecto & Entero & Si & No & Si & \\ \hline 
-		PaevFKIdParEvaluador & Entero & Si & No & Si & \\ \hline 
-		AparEstado & Cadena & Si & No & No & \\ \hline 
-		AparFecha & Fecha & Si & No & No & \\ \hline 
-		UserFKAsignadoPor & Cadena & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Apar IdAsignacion & Entero & Si & Si & No & \\ \hline 
+		Proy FKIdProyecto & Entero & Si & No & Si & \\ \hline 
+		Paev FKIdParEvaluador & Entero & Si & No & Si & \\ \hline 
+		Apar Estado & Cadena & Si & No & No & \\ \hline 
+		Apar Fecha & Fecha & Si & No & No & \\ \hline 
+		User FKAsignadoPor & Cadena & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Preevaluacion}
+	\caption{Tabla de diccionario - Preevaluacion}
 	\label{labelTablePreevaluacion}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		PrevIdPreevaluacion & Entero & Si & Si & No & \\ \hline 
-		PrevDescripcion & Texto largo & Si & No & No & \\ \hline 
-		PrevFecha & Fecha & Si & No & No & \\ \hline 
-		PrevEstado & Cadena & Si & No & No & \\ \hline 
-		PrevResultado & Cadena & Si & No & No & \\ \hline 
-		InstFKIdInstancia & Entero & Si & No & Si & \\ \hline 
-		ProyFKIdProyecto & Entero & Si & No & Si & \\ \hline 
-		UserFKIdUsuario & Cadena & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Prev IdPreevaluacion & Entero & Si & Si & No & \\ \hline 
+		Prev Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Prev Fecha & Fecha & Si & No & No & \\ \hline 
+		Prev Estado & Cadena & Si & No & No & \\ \hline 
+		Prev Resultado & Cadena & Si & No & No & \\ \hline 
+		Inst FKIdInstancia & Entero & Si & No & Si & \\ \hline 
+		Proy FKIdProyecto & Entero & Si & No & Si & \\ \hline 
+		User FKIdUsuario & Cadena & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Instancia}
+	\caption{Tabla de diccionario - Instancia}
 	\label{labelTableInstancia}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		InstIdInstancia & Entero & Si & Si & No & \\ \hline 
-		InstNombre & Cadena & Si & No & No & \\ \hline 
-		InstDescripcion & Texto largo & Si & No & No & \\ \hline 
-		InstEstado & Cadena & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Inst IdInstancia & Entero & Si & Si & No & \\ \hline 
+		Inst Nombre & Cadena & Si & No & No & \\ \hline 
+		Inst Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Inst Estado & Cadena & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Integrantes Grupo}
+	\caption{Tabla de diccionario - Integrantes Grupo}
 	\label{labelTableIntegrantesGrupo}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		IgruIdIntegrante & Entero & Si & Si & No & \\ \hline 
-		UserFKIdUsuario & Cadena & Si & No & Si & \\ \hline 
-		GrivFKIdGrupoInv & Entero & Si & No & Si & \\ \hline 
-		IgruEstado & Cadena & Si & No & No & \\ \hline 
-		IgruFecha & Fecha & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Igru IdIntegrante & Entero & Si & Si & No & \\ \hline 
+		User FKIdUsuario & Cadena & Si & No & Si & \\ \hline 
+		Griv FKIdGrupoInv & Entero & Si & No & Si & \\ \hline 
+		Igru Estado & Cadena & Si & No & No & \\ \hline 
+		Igru Fecha & Fecha & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Proyectos Semilleros}
+	\caption{Tabla de diccionario - Proyectos Semilleros}
 	\label{labelTableProyectosSemilleros}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		PrsmIdProyecto & Entero & Si & Si & No & \\ \hline 
-		PrsmFecha & Fecha & Si & No & No & \\ \hline 
-		PrsmEstado & Cadena & Si & No & No & \\ \hline 
-		ProyFKIdProyecto & Entero & Si & No & Si & \\ \hline 
-		SmlrFKIdSemillero & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Prsm IdProyecto & Entero & Si & Si & No & \\ \hline 
+		Prsm Fecha & Fecha & Si & No & No & \\ \hline 
+		Prsm Estado & Cadena & Si & No & No & \\ \hline 
+		Proy FKIdProyecto & Entero & Si & No & Si & \\ \hline 
+		Smlr FKIdSemillero & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Proyectos Grupos}
+	\caption{Tabla de diccionario - Proyectos Grupos}
 	\label{labelTableProyectosGrupos}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		PrgrIdProyecto & Entero & Si & Si & No & \\ \hline 
-		PrgrFecha & Fecha & Si & No & No & \\ \hline 
-		PrgrEstado & Cadena & Si & No & No & \\ \hline 
-		ProyFKIdProyecto & Entero & Si & No & Si & \\ \hline 
-		GrivFKIdGrupoInv & Entero & Si & No & Si & \\ \hline 
-		PrgrLugarEjecucion & Cadena & Si & No & No & \\ \hline 
-		MpioFKIdMpio & Entero & Si & No & Si & \\ \hline 
-		PrgrDuracion & DOUBLE & Si & No & No & \\ \hline 
-		TinvFKIdTipo & Entero & Si & No & Si & \\ \hline 
-		PrgrValorTotal & BI Entero & Si & No & No & \\ \hline 
-		PrgrValorSolicitado & BI Entero & Si & No & No & \\ \hline 
-		PrgrValorContrapartida & BI Entero & Si & No & No & \\ \hline 
-		PrgrTotalInvestigadores & Entero & Si & No & No & \\ \hline 
-		PrgrTipo & Cadena & Si & No & No & \\ \hline 
-		PrgrResultadosEsperados & Texto largo & Si & No & No & \\ \hline 
-		PrgrEstraComunicacion & Texto largo & Si & No & No & \\ \hline 
-		PrgrPalabrasClave & Texto largo & Si & No & No & \\ \hline 
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Prgr IdProyecto & Entero & Si & Si & No & \\ \hline 
+		Prgr Fecha & Fecha & Si & No & No & \\ \hline 
+		Prgr Estado & Cadena & Si & No & No & \\ \hline 
+		Proy FKIdProyecto & Entero & Si & No & Si & \\ \hline 
+		Griv FKIdGrupoInv & Entero & Si & No & Si & \\ \hline 
+		Prgr LugarEjecucion & Cadena & Si & No & No & \\ \hline 
+		Mpio FKIdMpio & Entero & Si & No & Si & \\ \hline 
+		Prgr Duracion & DOUBLE & Si & No & No & \\ \hline 
+		Tinv FKIdTipo & Entero & Si & No & Si & \\ \hline 
+		Prgr ValorTotal & BI Entero & Si & No & No & \\ \hline 
+		Prgr ValorSolicitado & BI Entero & Si & No & No & \\ \hline 
+		Prgr ValorContrapartida & BI Entero & Si & No & No & \\ \hline 
+		Prgr TotalInvestigadores & Entero & Si & No & No & \\ \hline 
+		Prgr Tipo & Cadena & Si & No & No & \\ \hline 
+		Prgr ResultadosEsperados & Texto largo & Si & No & No & \\ \hline 
+		Prgr EstraComunicacion & Texto largo & Si & No & No & \\ \hline 
+		Prgr PalabrasClave & Texto largo & Si & No & No & \\ \hline 
 		& Cadena & No & No & No & \\ \hline 	
-	\end{tabular}
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Roles Integrantes Semillero}
+	\caption{Tabla de diccionario - Roles Integrantes Semillero}
 	\label{labelTableRolesIntegrantesSemillero}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		RismIdRol & Entero & Si & Si & No & \\ \hline 
-		RismFecha & Fecha & Si & No & No & \\ \hline 
-		RismEstado & Cadena & Si & No & No & \\ \hline 
-		IsmlFKIdIntegrante & Entero & Si & No & Si & \\ \hline 
-		RsmlFKIdRolSemillero & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Rism IdRol & Entero & Si & Si & No & \\ \hline 
+		Rism Fecha & Fecha & Si & No & No & \\ \hline 
+		Rism Estado & Cadena & Si & No & No & \\ \hline 
+		Isml FKIdIntegrante & Entero & Si & No & Si & \\ \hline 
+		Rsml FKIdRolSemillero & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Rol Grupo}
+	\caption{Tabla de diccionario - Rol Grupo}
 	\label{labelTableRolGrupo}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		RgruIdRolGrupo & Entero & Si & Si & No & \\ \hline 
-		RgruNombre & Cadena & Si & No & No & \\ \hline 
-		RgruEstado & Cadena & Si & No & No & \\ \hline 
-		GrivFKIdGrupoInv & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Rgru IdRolGrupo & Entero & Si & Si & No & \\ \hline 
+		Rgru Nombre & Cadena & Si & No & No & \\ \hline 
+		Rgru Estado & Cadena & Si & No & No & \\ \hline 
+		Griv FKIdGrupoInv & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Roles Integrantes Grupo}
+	\caption{Tabla de diccionario - Roles Integrantes Grupo}
 	\label{labelTableRolesIntegrantesGrupo}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		RigrIdRol & Entero & Si & Si & No & \\ \hline 
-		RigrFecha & Fecha & Si & No & No & \\ \hline 
-		RigrEstado & Cadena & Si & No & No & \\ \hline 
-		IgruFKIdIntegrante & Entero & Si & No & Si  & \\ \hline 
-		RgruFKIdRolGrupo & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Rigr IdRol & Entero & Si & Si & No & \\ \hline 
+		Rigr Fecha & Fecha & Si & No & No & \\ \hline 
+		Rigr Estado & Cadena & Si & No & No & \\ \hline 
+		Igru FKIdIntegrante & Entero & Si & No & Si  & \\ \hline 
+		Rgru FKIdRolGrupo & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Objetivos Proyecto Semillero}
+	\caption{Tabla de diccionario - Objetivos Proyecto Semillero}
 	\label{labelTableObjetivosProyectoSemillero}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		ObpsIdObjetivo & Entero & Si & Si & No & \\ \hline 
-		ObpsID & Cadena & Si & No & No & \\ \hline 
-		ObpsDescripcion & Cadena & Si & No & No & \\ \hline 
-		ObpsFecha & Fecha & Si & No & No & \\ \hline 
-		ObpsEstado & Cadena & Si & No & No & \\ \hline 
-		ObpsTipo & Cadena & Si & No & No & \\ \hline 
-		PrsmFKIdProyecto & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Obps IdObjetivo & Entero & Si & Si & No & \\ \hline 
+		Obps ID & Cadena & Si & No & No & \\ \hline 
+		Obps Descripcion & Cadena & Si & No & No & \\ \hline 
+		Obps Fecha & Fecha & Si & No & No & \\ \hline 
+		Obps Estado & Cadena & Si & No & No & \\ \hline 
+		Obps Tipo & Cadena & Si & No & No & \\ \hline 
+		Prsm FKIdProyecto & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Informe Parcial}
+	\caption{Tabla de diccionario - Informe Parcial}
 	\label{labelTableInformeParcial}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		InpaIdInformeParcial & Entero & Si & Si & No & \\ \hline 
-		InpaDescripcion & Texto largo & Si & No & No & \\ \hline 
-		InpaFecha & Fecha & Si & No & No & \\ \hline 
-		InpaEstado & Cadena & Si & No & No & \\ \hline 
-		InpaMetodologia & Texto largo & Si & No & No & \\ \hline 
-		InpaResultados & Texto largo & Si & No & No & \\ \hline 
-		InpaImpacto & Texto largo & Si & No & No & \\ \hline 
-		InpaEstraDivulgacion & Texto largo & Si & No & No & \\ \hline 
-		ProyFKIdProyecto & Entero & Si & No & Si & \\ \hline 
-		InpaDocSoporte & Texto largo & Si & No & No & \\ \hline 
-		InpaPresupuesto & Texto largo & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Inpa IdInformeParcial & Entero & Si & Si & No & \\ \hline 
+		Inpa Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Inpa Fecha & Fecha & Si & No & No & \\ \hline 
+		Inpa Estado & Cadena & Si & No & No & \\ \hline 
+		Inpa Metodologia & Texto largo & Si & No & No & \\ \hline 
+		Inpa Resultados & Texto largo & Si & No & No & \\ \hline 
+		Inpa Impacto & Texto largo & Si & No & No & \\ \hline 
+		Inpa EstraDivulgacion & Texto largo & Si & No & No & \\ \hline 
+		Proy FKIdProyecto & Entero & Si & No & Si & \\ \hline 
+		Inpa DocSoporte & Texto largo & Si & No & No & \\ \hline 
+		Inpa Presupuesto & Texto largo & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Integrantes Proyecto Semillero}
+	\caption{Tabla de diccionario - Integrantes Proyecto Semillero}
 	\label{labelTableIntegrantesProyectoSemillero}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		IprsIdIntegrante & Entero & Si & Si & No & \\ \hline 
-		IprsFecha & Fecha & Si & No & No & \\ \hline 
-		IprsEstado & Cadena & Si & No & No & \\ \hline 
-		RolpFKIdRolProyecto & Entero & Si & No & Si & \\ \hline 
-		IsmlFKIdIntegrante & Entero & Si & No & Si & \\ \hline 
-		PrsmFKIdProyecto & Entero & Si & No & Si &  \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Iprs Id Integrante & Entero & Si & Si & No & \\ \hline 
+		Iprs Fecha	& Fecha		& Si 	 & No & No & \\ \hline 
+		Iprs Estado & Cadena	& Si	 & No & No & \\ \hline 
+		Rolp FK IdRolProyecto	& Entero & Si & No & Si & \\ \hline 
+		Isml FK IdIntegrante	& Entero & Si & No & Si & \\ \hline 
+		Prsm FK IdProyecto		& Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Rol Proyecto}
+	\caption{Tabla de diccionario - Rol Proyecto}
 	\label{labelTableRolProyecto}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		RolpIdRolProyecto & Entero & Si & Si & No & \\ \hline 
-		RolpNombre & Cadena & Si & No & No & \\ \hline 
-		RolpEstado & Cadena & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Rolp Id Rol Proyecto & Entero & Si & Si & No & \\ \hline 
+		Rolp Nombre & Cadena & Si & No & No & \\ \hline 
+		Rolp Estado & Cadena & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Informe Final}
+	\caption{Tabla de diccionario - Informe Final}
 	\label{labelTableInformeFinal}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		InfiIdInformeFinal & Entero & Si & Si & No & \\ \hline 
-		InfiProblemaPlanteado & Texto largo & Si & No & No & \\ \hline 
-		InfiHipotesis & Texto largo & Si & No & No & \\ \hline 
-		InfiAvanceObtenido & Texto largo & Si & No & No & \\ \hline 
-		InfiRetosPlanteados & Texto largo & Si & No & No & \\ \hline 
-		InfiGradoComprobacion & Texto largo & Si & No & No & \\ \hline 
-		InfiGestionProyecto & Texto largo & Si & No & No & \\ \hline 
-		InfiObservaciones & Texto largo & Si & No & No & \\ \hline 
-		InfiRecomendaciones & Texto largo & Si & No & No & \\ \hline 
-		InfiActores & Texto largo & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Infi Id Informe Final & Entero & Si & Si & No & \\ \hline 
+		Infi Problema Planteado & Texto largo & Si & No & No & \\ \hline 
+		Infi Hipotesis & Texto largo & Si & No & No & \\ \hline 
+		Infi Avance Obtenido & Texto largo & Si & No & No & \\ \hline 
+		Infi Retos Planteados & Texto largo & Si & No & No & \\ \hline 
+		Infi Grado Comprobacion & Texto largo & Si & No & No & \\ \hline 
+		Infi Gestion Proyecto & Texto largo & Si & No & No & \\ \hline 
+		Infi Observaciones & Texto largo & Si & No & No & \\ \hline 
+		Infi Recomendaciones & Texto largo & Si & No & No & \\ \hline 
+		Infi Actores & Texto largo & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Informe Final}
+	\caption{Tabla de diccionario - Informe Final}
 	\label{labelTableInformeFinal}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		InfiIdInformeFinal & Entero & Si & Si & No & \\ \hline 
-		InfiProblemaPlanteado & Texto largo & Si & No & No & \\ \hline 
-		InfiHipotesis & Texto largo & Si & No & No & \\ \hline 
-		InfiAvanceObtenido & Texto largo & Si & No & No & \\ \hline 
-		InfiRetosPlanteados & Texto largo & Si & No & No & \\ \hline 
-		InfiGradoComprobacion & Texto largo & Si & No & No & \\ \hline 
-		InfiGestionProyecto & Texto largo & Si & No & No & \\ \hline 
-		InfiObservaciones & Texto largo & Si & No & No & \\ \hline 
-		InfiRecomendaciones & Texto largo & Si & No & No & \\ \hline 
-		InfiActores & Texto largo & Si & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Infi Id Informe Final & Entero & Si & Si & No & \\ \hline 
+		Infi Problema Planteado & Texto largo & Si & No & No & Describe el problema del informe \\ \hline 
+		Infi Hipotesis & Texto largo & Si & No & No & Hipótesis del informe \\ \hline 
+		Infi Avance Obtenido & Texto largo & Si & No & No & \\ \hline 
+		Infi Retos Planteados & Texto largo & Si & No & No & \\ \hline 
+		Infi Grado Comprobacion & Texto largo & Si & No & No & \\ \hline 
+		Infi Gestion Proyecto & Texto largo & Si & No & No & \\ \hline 
+		Infi Observaciones & Texto largo & Si & No & No & \\ \hline 
+		Infi Recomendaciones & Texto largo & Si & No & No & \\ \hline 
+		Infi Actores & Texto largo & Si & No & No & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 
 \begin{table}[ht]
-	\caption{Tabla Cronograma Convocatoria}
+	\caption{Tabla de diccionario - Cronograma Convocatoria}
 	\label{labelTableCronogramaConvocatoria}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		CrcvIdCronograma & Entero & Si & Si & No & \\ \hline 
-		CrcvDescripcion & Texto largo & Si & No & No & \\ \hline 
-		CrcvFechaCreacion & Fecha & Si & No & No & \\ \hline 
-		CrcvFechaActividad & Fecha & Si & No & No & \\ \hline 
-		CrcvEstado & Cadena & No & No & No & \\ \hline 
-		ConvFKIdConvocatoria & Entero & Si & No & Si & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Crcv Id Cronograma & Entero & Si & Si & No & \\ \hline 
+		Crcv Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Crcv Fecha Creacion & Fecha & Si & No & No & \\ \hline 
+		Crcv Fecha Actividad & Fecha & Si & No & No & Fecha propuesta para actividad\\ \hline 
+		Crcv Estado & Cadena & No & No & No & Activo - Desactivado \\ \hline 
+		Conv FK Id Convocatoria & Entero & Si & No & Si & \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Soportes Cronograma}
+	\caption{Tabla de diccionario - Soportes Cronograma}
 	\label{labelTableSoportesCronograma}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		SocrIdSoporte & Entero & Si & Si & No & \\ \hline 
-		SocrDescripcion & Texto largo & Si & No & No & \\ \hline 
-		SocrRutaAdjunto & Cadena & Si & No & No & \\ \hline 
-		SocrEstado & Cadena & Si & No & No & \\ \hline 
-		SocrFecha & Fecha & Si & No & No & \\ \hline 
-		CrcvFKIdCronograma & Entero & Si & No & Si &  \\ \hline	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Socr Id Soporte & Entero & Si & Si & No & \\ \hline 
+		Socr Descripcion & Texto largo & Si & No & No & \\ \hline 
+		Socr Ruta Adjunto & Cadena & Si & No & No & Ruta del soporte cronograma \\ \hline 
+		Socr Estado & Cadena & Si & No & No & Activo - Desactivado \\ \hline 
+		Socr Fecha & Fecha & Si & No & No & \\ \hline 
+		Crcv FK Id Cronograma & Entero & Si & No & Si & Relación a cronograma \\ \hline	
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Producci\'on Grupo}
+	\caption{Tabla de diccionario - Producci\'on Grupo}
 	\label{labelTableProduccionGrupo}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|l|X|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline
-		PgruIdProduccion & Entero & Si & Si & No & \\ \hline 
-		Pgru & Cadena & No & No & No & \\ \hline 	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline
+		Pgru Id Produccion & Entero & Si & Si & No & Clave primaria \\ \hline 
+		Pgru & Cadena & No & No & No & Producción grupo \\ \hline 	
+	\end{tabularx}
 \end{table}
 
 \begin{table}[ht]
-	\caption{Tabla Unidades Acad\'emicas}
+	\caption{Tabla de diccionario - Unidades Acad\'emicas}
 	\label{labelTableUnidadesAcademicas}
-	\begin{tabular}{ |l|l|l|l|l|l| }
+	\begin{tabularx}{\linewidth}{|X|l|X|X|X|X|}
 		\hline
-		Nombre & Tipo de dato & Valor Null & Primaria & For\'anea & Comentario \\ \hline		
-		UnacIdUnidad & Entero & Si & Si & No & \\ \hline 
-		UnacNombre & Cadena & Si & No & No & \\ \hline 
-		UnacEstado & Cadena & Si & No & No & \\ \hline 
-		UnacFechaCreacion & Fecha & Si & No & No & \\ \hline	
-	\end{tabular}
+		Nombre & Tipo de dato & Permite Null & Primaria & For\'anea & Comentario \\ \hline		
+		Unac Id Unidad	& Entero & Si & Si & No & \\ \hline 
+		Unac Nombre		& Cadena & Si & No & No & \\ \hline 
+		Unac Estado		& Cadena & Si & No & No & Activo - Desactivado\\ \hline 
+		Unac Fecha Creacion & Fecha & Si & No & No & \\ \hline	
+	\end{tabularx}
 \end{table}
