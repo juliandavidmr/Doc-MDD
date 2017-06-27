@@ -1,0 +1,31 @@
+\chapter{Arquitectura de lado del cliente}
+\label{chapter_arq_frontend}
+
+Con el auge de las plataformas web y la necesidad de hacer presencia en la red de Internet, el desarrollo de servicios web multi-plataforma se convierte en un requisito fundamental que cumple con la demanda generada por las personas.
+\\
+
+Microsoft dispone de muchas tecnologías, van desde sistemas operativos (SO) hasta pequeñas pero potentes librerías que facilitan el desarrollo de software. El framework .NET creado por esta multinacional, destaca el manejo rápido y económico de desarrollar aplicaciones permitiendo una integración más rápida y eficaz a diferentes dispositivos, actualmente disponible para su instalación en SO Windows, Linux y Mac, aunque estos dos últimos disponen de una versión comunitaria llamada .NET Core que incluye el acceso a la mayoría de las APIs dadas por su gemelo .Net, por otro lado, cabe destacar que .Net Core pertenece a una rama diferente al compilador Mono. 
+\\
+
+Este proyecto se ha realizado con base en esta tecnología (.NET), desarrollando una aplicación web completa para gestión documental de los procesos dados por administración y vicerectoría.de la Universidad de la Amazonia.
+
+\section{Herramientas}
+
+\begin{table}[H]
+	\centering
+	\caption{Herramientas usadas en las interfaces cliente}
+	\label{label_herr_impl}
+	\begin{tabularx}{\linewidth}{|l|X|l|}	
+		\hline 
+		\textbf{Nombre} & \textbf{Descripción} & \textbf{Versión} \\ 
+		\hline 
+		Ext.NET	& Framework de componentes basado en ASP.NET, construido por Sencha. Multinacionales de todo el mundo lo usan: Disney, Canon, Universal, entre otras. EL menú principal de SIGEPI junto con todas sus opciones fue desarrollado con este marco de trabajo con el fin de mejorar la experiencia de usuario y la usabilidad del sistema. & 4 \\ 
+		\hline 
+		Bootstrap & Framework HTML, CSS y JS popular, usado para desarrollar pequeñas animaciones y colores en la pagina principal. & 3 \\ 
+		\hline
+		AngularJS & Framework de javascript desarrollado por Google que permite el desarrollo de interfaces web dinámicas. Usado en la pagina principal para mejorar la interacción con el cliente. & 1 \\ 
+		\hline 
+		jQuery & Biblioteca de JavaScript, simplifica la manera de interactuar con documentos HTML, árbol DOM, eventos, animaciones y AJAX. Usado en el diseño de la pagina principal de SIGEPI & 1 \\
+		\hline
+	\end{tabularx} 
+\end{table}
