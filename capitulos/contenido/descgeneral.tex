@@ -3,24 +3,25 @@
 \section[Planteamiento del problema]{Planteamiento del problema}
 
 \subsection[Contexto]{Contexto}
-En la búsqueda de mejores procesos que ayuden en la
-optimización de la productividad en el desarrollo de software, 
+En la constante búsqueda de mejores métodos que ayuden en la
+optimización y productividad en el desarrollo de software, 
 nuevas metodologías y herramientas han emergido, consigo vienen 
 diferentes maneras de aplicar la ingeniera en la realización de 
-tareas complejas, algunas veces para tiempos relativamente cortos. Un ejemplo 
-común es el modelado de requisitos, siguiendo el estándar UML 
+tareas complejas, algunas veces para tiempos relativamente cortos. 
+Un ejemplo común es el modelado de requisitos, siguiendo el estándar UML 
 se pueden obtener esquemas que permiten la visualización de 
 cada proceso por separado desde diferentes puntos de vista; 
-diagramas de casos de uso, clases, bloques, secuencia, componentes, etc.
+diagramas de casos de uso, clases, bloques, secuencia, componentes, 
+entre otros.
 
-Hoy en día, es común encontrar variedades herramientas de 
-modelado UML que permiten la generación de código fuente, 
-pero existe una limitación que se puede plantear sobre 
-la misma ideología 
+Hoy en día, es común encontrar variedades de herramientas para
+modelado UML (Lenguaje de Modelado Unificado) que permiten la 
+generación automática de código fuente, 
+aunque existe una limitación que se puede plantear sobre la misma ideología 
 que mantiene este estándar, dado que se deben seguir 
-estrictamente una serie de normas. El tiempo gastado en el 
+estrictamente una serie de normas establecidas. El tiempo gastado en el 
 modelado UML produce el mismo valor en código, pero todavía
-necesita agregar o editar manualmente la mayoría del código.
+necesita agregar y/o editar manualmente el código parcialmente.
 
 Existen casos en donde es necesario diseñar y crear un sistema
 de información siguiendo un
@@ -45,30 +46,30 @@ Consiste en realizar el modelado del sistema a partir de un
 conjunto de requerimientos. El paso a seguir trata de la
 adecuación de un marco de trabajo, algunas veces esto se lleva
 a cabo manualmente, un ejemplo claro es cuando se usa la
-arquitectura de tres capas MVC (Modelo, Vista y
-Controlador); se construye individualmente cada elemento
-según sea la capa correspondiente.
+arquitectura triple capa MVC (modelo, vista, controlador); 
+se construye individualmente cada elemento según sea la capa 
+correspondiente.
 
 \section[Justificación]{Justificación}
 El desarrollo dirigido por modelos (MDD) es una disciplina que 
 ha ido emergiendo con gran fuerza en los últimos años
 \cite{pons2010desarrollo}. Ha impuesto una nueva forma de
-desarrollar y mantener sistemas software.
-Cuando se desarrolla un SI con los métodos
-convencionales, requiere de bastante tiempo dependiendo de la
+desarrollar y mantener sistemas de información.
+Cuando se desarrolla un SI con los métodos convencionales, 
+se requiere de bastante tiempo dependiendo de la
 complejidad del mismo, incluyendo el tiempo de
-modelado de esquemas, tales como diagramas UML (Lenguaje de Modelado Unificado). 
-Lo anterior implica que el progreso del sistema 
-debe mantener en constante supervisión, con el fin de velar
-por el cumplimiento 
-de los requisitos que fueron regidos en la planificación inicial.
+modelado de esquemas, tales como diagramas UML
+Lo anterior implica que el desempeño en los objetivos del sistema 
+deben mantener en constante supervisión, con el fin de velar
+por el cumplimiento de los requisitos que fueron regidos en la 
+planificación inicial (requisitos y modelado).
 
-El ciclo de vida en el desarrollo de un SI está dado por seis
+El ciclo de vida en el desarrollo de un SI está dado principalmente por seis
 fases: Planificación y determinación de requisitos, análisis,
 diseño, desarrollo, pruebas e instalación en producción
 \cite{pons2010desarrollo}. Con el uso de un lenguaje de dominio
 especifico se reduce el tiempo de desarrollo de un SI, 
-debido a la eficacia en el avance de las etapas que suelen tomar mas tiempo.
+debido a la aceleración durante el avance de las etapas que suelen tomar mas tiempo.
 El elemento ''diseño'' y ''desarrollo'' tienden a trabajar conjuntamente,
 donde el primero está ligado de forma rigurosa al segundo gracias a un
 lenguaje intermediario, este ultimo conocido como lenguaje de dominio
@@ -77,12 +78,11 @@ especifico, o DSL.
 Tal es el caso de la plataforma web SIGEPI (Sistema de 
 información para la gestión de proyectos de investigación),
 donde se optó por la implementación de la herramienta DSL Tools,
-un entorno de
-desarrollo creado por la multinacional Microsoft, conocido 
+un entorno de desarrollo creado por la multinacional Microsoft, conocido 
 como ''.NET''. Esta herramienta es una notación del lenguaje de 
 dominio especifico, ofrece un complejo Kit de desarrollo de 
-software (SDK) que se integra totalmente con el entorno de 
-desarrollo integrado, Visual Studio. Todo esto se adapta
+software (SDK) que se integra totalmente con el IDE (entorno de 
+desarrollo integrado) Visual Studio. Todo esto se adapta
 completamente con los lineamientos establecidos por Universidad 
 de la Amazonia, ya que el sistema puede ser integrado
 simultáneamente con el sistema misional de la misma, Chairá.

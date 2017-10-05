@@ -19,6 +19,7 @@
 %\usepackage{subfig}
 %\usepackage{subfigure}
 \usepackage{multirow}
+\usepackage[acronym]{glossaries}
 \usepackage{microtype} % Makes pdf look better.
 \usepackage[left=3.00cm, right=3.00cm, top=2.00cm, bottom=2.00cm]{geometry}
 \author{Julian David Mora Ramos}
@@ -90,10 +91,10 @@
 	\frontmatter 
 		
 	% Paginas iniciales
-	\include{capitulos/portada}
-	% \include{capitulos/portada0}
+	% \include{capitulos/portada}
+	\include{capitulos/portada0}
 	\include{capitulos/dedicacion}
-	\include{capitulos/agradecimientos}
+	% \include{capitulos/agradecimientos}
 	\include{capitulos/aceptacion}
 	\include{capitulos/declaracion}
 	\include{capitulos/resumen}
@@ -123,7 +124,7 @@
 	\include{capitulos/requisitos}
 	
 	% Finalización
-	% \include{capitulos/glosario}
+	\include{capitulos/glosario}
 	\include{capitulos/conclusiones}
 	
 	\bibliographystyle{alpha}
